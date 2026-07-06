@@ -1,0 +1,43 @@
+\section*{Model}
+
+The main claim is that inertia is not fixed. In a stable environment, inertia can grow because people stop looking broadly across the display. We therefore model utility as a function of the attributes, an inertia term, and an interaction between inertia and attention:
+
+\begin{equation}
+U_{n,t,j} =
+V(X_{n,t,j}, \beta_{n,t})
++ \beta_{\text{Inertia},0} I_{n,t,j}
++ \beta_{\text{Att}} \text{LatAttention}_{n,t} I_{n,t,j}
++ \epsilon_{n,t,j}.
+\end{equation}
+
+Here, $I_{n,t,j}$ indexes whether alternative $j$ is supported by the learned layout or by the previous choice, and $\text{LatAttention}_{n,t}$ is the participant's attention on trial $t$. The effective inertia parameter is therefore trial-specific:
+
+\begin{equation}
+\beta_{\text{Inertia},n,t} =
+\beta_{\text{Inertia},0}
++ \beta_{\text{Inertia-Attention},n}
+\text{LatAttention}_{n,t}.
+\end{equation}
+
+Attention is tied to eye-tracking through a measurement equation based on gaze entropy:
+
+\begin{equation}
+\text{Entropy}_{n,t} =
+f(\text{LatAttention}_{n,t}) + \varepsilon_{n,t}.
+\end{equation}
+
+This structural approach matters because choices alone cannot distinguish a deliberate repeated choice from a habit caused by the stable layout. If attention is omitted, the model pushes the missing term into the error:
+
+\begin{equation}
+\hat{\epsilon}_{n,t,j} =
+\beta_{\text{Att}} \text{LatAttention}_{n,t} I_{n,t,j}
++ \epsilon_{n,t,j}.
+\end{equation}
+
+Because reliance on the learned layout is related to lower attention, the omitted term is correlated with inertia:
+
+\begin{equation}
+\operatorname{Cov}(I_{n,t,j}, \hat{\epsilon}_{n,t,j}) \neq 0.
+\end{equation}
+
+Standard approaches that omit this latent attention interaction suffer from observational equivalence—they cannot distinguish a blind habit from a calculated choice. By resolving this endogeneity using eye-tracking as a structural measurement equation, our model can accurately isolate true preference parameters. Furthermore, attribute coefficients and willingness-to-pay are allowed to change dynamically over trials and shift after the layout disruption, capturing the true evolution of valuation.

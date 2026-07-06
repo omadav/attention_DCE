@@ -1,0 +1,100 @@
+\section*{Results}
+
+\begin{figure*}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{Panel.png}
+    \caption{Overview of behavioral and model results. (\textbf{A}) Mean probability of choice repetition (inertia; pink, left axis) and mean gaze entropy (gray, right axis) across trials. Before the manipulation, inertia rises as entropy falls; after the layout change at trial 101, the trend reverses (teal). (\textbf{B}) Mean response time in laboratory and online samples. Both show steep RT decline during training and a partial recovery at the manipulation. (\textbf{C}) Positive correlation between log trial duration and gaze entropy: faster choices are associated with narrower attention. (\textbf{D}) Evolution of model-estimated attention, inertia ($\beta_{\text{inertia}}$), value of travel time savings (VTTS), and willingness-to-pay for CO\textsubscript{2} and comfort across trials. All parameters shift simultaneously at trial 101.}
+    \label{fig:results}
+\end{figure*}
+
+We organize the results around the proposed chain: stable environment, lower attention, habit, and inertia. First, descriptive eye-tracking results show that attention narrows during training and changes after the layout is disrupted. Second, the model shows that as attention falls, inertia rises for most participants. Third, a median split on attention shows that time alone does not create the habit; inertia grows mainly when attention is low. Fourth, the estimated attribute weights and willingness-to-pay trajectories show that the stable environment changes the preferences recovered by the model.
+
+\subsection*{Attention Narrows in the Stable Environment}
+
+The descriptive eye-tracking results show the basic attention pattern. During the stable phase, gaze entropy decreased across trials. This means that participants looked across the display in a narrower and more regular way. After the layout changed, this pattern partly reversed, suggesting that the change made participants search again.
+
+\begin{table}[H]
+\centering
+\caption{Fixed-effect model predicting entropy from trial and manipulation.}
+\label{tab:entropy-model}
+\begin{tabular}{lrrr}
+\toprule
+Predictor & Estimate & Std. Error & $t$ value \\
+\midrule
+Intercept & 2.070 & 0.042 & 49.786 \\
+Trial & -0.004 & 0.000 & -28.264 \\
+Manipulation & -0.003 & 0.046 & -0.067 \\
+Trial $\times$ Manipulation & 0.002 & 0.000 & 4.347 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent Model: entropy $\sim$ Trial $\times$ (Trial $>$ 100) + (1 $|$ participant), $R^2 = .586$.
+
+\subsection*{Attribute-Level Fixation Patterns Changed Across Training}
+
+Fixation-time ratios varied by attribute and phase. During training, participants did not look at all attributes equally. After the layout changed, fixation patterns changed as well. We treat these patterns as descriptive evidence that the stable environment changed how people looked at the task.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{word_media/media/image4.png}
+    \caption{Fixation time ratio by attribute across 50-trial blocks. Fixation time ratio is fixation time divided by total trial time.}
+    \label{fig:fixation-ratio}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Model predicting fixation-time ratio by stage and attribute.}
+\label{tab:fixation-ratio}
+\begin{tabular}{lrrr}
+\toprule
+Predictor & Estimate & Std. Error & $t$ value \\
+\midrule
+Intercept & 0.303 & 0.003 & 100.182 \\
+Stage 51--100 & 0.001 & 0.004 & 0.228 \\
+Stage 101--150 & 0.025 & 0.005 & 5.200 \\
+Time & -0.014 & 0.004 & -3.379 \\
+Comfort & -0.116 & 0.004 & -26.995 \\
+CO\textsubscript{2} & -0.083 & 0.004 & -19.446 \\
+Stage 51--100 $\times$ Time & 0.016 & 0.006 & 2.559 \\
+Stage 101--150 $\times$ Time & -0.032 & 0.007 & -4.685 \\
+Stage 51--100 $\times$ Comfort & -0.013 & 0.006 & -2.104 \\
+Stage 101--150 $\times$ Comfort & -0.012 & 0.007 & -1.779 \\
+Stage 51--100 $\times$ CO\textsubscript{2} & -0.007 & 0.006 & -1.099 \\
+Stage 101--150 $\times$ CO\textsubscript{2} & -0.056 & 0.007 & -8.243 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Lower Attention Is Linked to More Inertia}
+
+The model estimates an individual-level link between attention and inertia. The distribution of $\beta_{\text{Inertia-Attention}}$ is concentrated below zero (Figure~\ref{fig:histogram}). This means that, for most participants, lower attention is linked to higher inertia. A small number of participants show the opposite pattern, which suggests that people differ in how they respond to the stable environment.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{histogram.jpeg}
+    \caption{Distribution of the individual-level relation between attention and inertia. Negative values mean that lower attention is linked to higher inertia.}
+    \label{fig:histogram}
+\end{figure}
+
+\subsection*{Time Alone Does Not Create Inertia}
+
+Splitting trials by the median of attention shows that inertia is not just an effect of trial number. High-attention observations remain mostly flat across the task. Low-attention observations show a clear increase in inertia during the stable phase and remain elevated after the disruption (Figure~\ref{fig:median-split}). This is the key pattern: the habit appears when attention drops.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{median_split_inertia.jpeg}
+    \caption{Inertia over trials split by attention. High-attention choices remain mostly stable, whereas low-attention choices show a strong increase in inertia during the stable phase.}
+    \label{fig:median-split}
+\end{figure}
+
+\subsection*{The Stable Environment Changes Estimated Preferences}
+
+The beta and willingness-to-pay trajectories show that the change in attention matters for the choices themselves. During the stable phase, attention declines and inertia rises. The model also shows changes in the weights for cost, time, comfort, and CO\textsubscript{2}. Around trial 101, when the layout changes, these trajectories shift (Figure~\ref{fig:beta-evolution}). WTP for CO\textsubscript{2} and comfort changes sharply after the layout is scrambled. This suggests that a stable environment can change which attributes people use, and that breaking the stable environment can change them back.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.98\linewidth]{beta_evolution.jpeg}
+    \caption{Estimated trajectories for attention, attribute weights, inertia, and willingness-to-pay. The shift around trial 101 corresponds to the layout change.}
+    \label{fig:beta-evolution}
+\end{figure}
