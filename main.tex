@@ -1,83 +1,161 @@
-\documentclass[9pt,twocolumn,twoside]{pnas-new}
-\usepackage{ifthen}
+\documentclass[man,natbib,floatsintext]{apa7}
+\usepackage[american]{babel}
 \usepackage{microtype}
 \usepackage{amsmath}
 \usepackage{booktabs}
 \usepackage{float}
+\usepackage{graphicx}
 \usepackage{url}
 
-\providecommand{\articletype}[1]{}
-\providecommand{\dataavail}[1]{}
-\providecommand{\bibsplit}[1]{}
-\articletype{PSYCHOLOGICAL AND COGNITIVE SCIENCES}
-\templatetype{pnasresearcharticle}
+\title{Stable Repetition Produces Habit-Like Choice Without Feedback}
+\shorttitle{Habits Without Feedback}
+\authorsnames[1,{2,3},1]{Omar David Perez, Bastian Henriquez-Jara, Sebastian Mu\~{n}oz}
+\authorsaffiliations{{Department of Industrial Engineering, Universidad de Chile, Santiago, Chile},
+{Department of Civil Engineering, Universidad de Chile, Santiago, Chile},
+{Complex Engineering Systems Institute (ISCI), Santiago, Chile}}
+\leftheader{Perez et al.}
 
-\title{Attentional Habits Form Without Outcome Feedback: Evidence from Repeated Discrete Choices}
+\abstract{A long-standing question is when repeated actions become habits. Environmental stability may be critical: when an action is repeated in the same context, contextual features can retrieve it without its current value being reconsidered. We tested 114 adults using an overtrained discrete-choice task without outcome feedback. Participants made 150 choices among options whose attributes changed across trials; after 100 trials, the stable spatial layout was disrupted. Consistent with the animal-learning definition of habit, participants increasingly repeated previous choices that were no longer best under their current utility, despite stable underlying preferences. This value-insensitive responding was accompanied by narrower, more stereotyped attention. Disrupting the layout broadened attention and restored value-sensitive choice: participants again repeated previous choices mainly when current utility supported them. These results show that repetition in a stable decision environment can produce habit-like behavior without feedback and identify attention as a key variable in its formation.}
 
-\author[a,c]{Omar David Perez}
-\author[b,c]{Bastian Henriquez-Jara}
-\author[d]{Sebastian Mu\~{n}oz}
+\keywords{attention, discrete choice, habits, inertia, eye tracking}
 
-\affil[a]{Department of Industrial Engineering, Universidad de Chile, Santiago, Chile}
-\affil[b]{Department of Civil Engineering, Universidad de Chile, Santiago, Chile}
-\affil[c]{Complex Engineering Systems Institute (ISCI), Santiago, Chile}
-\affil[d]{NeuroPolicy Lab, Universidad de Chile, Santiago, Chile}
+\authornote{Omar David Perez and Bastian Henriquez-Jara contributed equally to this work.
 
-\leadauthor{Perez}
-
-\significancestatement{Habits are usually thought to require repeated reward: an action becomes automatic because it has been reinforced. We show that reward is not necessary. Using a discrete choice experiment with a stable context, participants developed attentional habits despite receiving no feedback about the consequences of their choices; they just reflect their preferences repeatedly. They learned where attributes were displayed, stopped reading labels, and made progressively faster choices. Underlying preferences, measured by willingness-to-pay, remained stable throughout, confirming that the habit changed how they decided, not what they valued. This shift is invisible in the choice data and detectable only through direct measures of attention. Because repeated decisions in stable environments account for a large share of everyday economic behavior, these results suggest that goal-directed evaluation is the exception, not the rule, in long preference elicitation tasks.}
-
-\authorcontributions{O.D.P.\ and B.H.J.\ designed the study. S.M.\ collected the data. S.M.\ and B.H.J.\ analyzed the data. O.D.P.\ and B.H.J.\ wrote the paper.}
-\authordeclaration{The authors declare no competing interests.}
-\equalauthors{\textsuperscript{1}O.D.P.\ contributed equally to this work with B.H.J.}
-\correspondingauthor{\textsuperscript{2}To whom correspondence should be addressed. E-mail: omar.perez.r@uchile.cl; bastian.henriquez@uchile.cl}
-
-\keywords{Discrete choice $|$ Attention $|$ Habits $|$ Inertia}
-
-\begin{abstract}
-Habits are defined by outcome value insensitivity: underlying preferences remain intact while behavior is no longer controlled by them. We ask whether this shift can occur without outcome feedback, through context stability alone. In a 150-trial discrete choice experiment with eye-tracking, participants chose between transport alternatives in a stable context for 100 trials; at trial 101, attribute positions were disrupted. During training, participants developed a spatial fixation habit: they memorized the attribute layout, stopped reading labels, and scanned values progressively faster. Willingness-to-pay remained stable throughout, confirming that underlying preferences were intact. A structural model revealed that as attention narrowed, attribute weights declined proportionally while the inertia coefficient rose in the opposite direction, and raw choice repetition stayed flat. When the context changed, attention broadened and the inertia coefficient changed; willingness-to-pay did not. Context stability alone, in the absence of any reward signal, is sufficient to shift behavioral control from goal-directed to habitual. The mechanism is attentional, and it is directly measurable by eye-tracking.
-\end{abstract}
-
-\dates{This manuscript was compiled on \today}
-\doi{\url{www.pnas.org/cgi/doi/10.1073/pnas.XXXXXXXXXX}}
+Correspondence concerning this article should be addressed to Omar David Perez, Department of Industrial Engineering, Universidad de Chile, Santiago, Chile, or Bastian Henriquez-Jara, Department of Civil Engineering, Universidad de Chile, Santiago, Chile. Email: omar.perez.r@uchile.cl or bastian.henriquez@uchile.cl}
 
 \graphicspath{{fig/}{screenshots/}}
 
-%%% DOCUMENT BEGINS HERE %%%
 \begin{document}
-
 \maketitle
-\thispagestyle{firststyle}
-\ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
 
-% Introduction — no section header in PNAS research articles
-\dropcap{D}iscrete choice experiments (DCEs) are widely used in economics, marketing, and transport research to measure preferences and estimate willingness-to-pay (WTP) for attributes of goods and services \cite{mcfadden1974, train2009}. Participants choose repeatedly between alternatives described by attributes such as cost, travel time, comfort, and environmental impact. These choices are used to estimate a utility function representing stable underlying preferences. Two assumptions are necessary for the resulting estimates to be valid. First, preferences must remain stable across the task: if they shift, estimated parameters will not recover true underlying values. Second, participants must attend to all relevant attributes when choosing: if they ignore some, estimated parameters will reflect only what was processed \cite{hole2011, yegoryan2020}.
+When you first arrive in a new city, every turn on your way to work is new and unpredictable. You must pay attention to the streets and consider where each turn will take you. With repetition, however, the route becomes familiar. Since the environment is stable, you can stop attending to every detail and begin to turn automatically as soon as you recognize each corner. The first kind of action is usually described as goal-directed, or value based, because it is selected by considering its expected consequences. The second is habitual: features of the environment (like the store or tree in some corner) make you repeat actions without requiring their consequences to be reconsidered each time \citep{wood2002,buyalskaya2023can}.
 
-Both assumptions stand in contrast with evidence from psychology and neuroscience. Repeated choices in stable environments shift behavioral control from a goal-directed system, which selects actions by evaluating their consequences, to a habitual system, which relies on stimulus-response associations acquired through experience \cite{guthrie1935, adamsDickinson1981, dickinson1985, dolanDayan2013}. The defining signature of habitual control is outcome insensitivity: habitual actions persist even when their consequences are devalued \cite{adamsDickinson1981, dickinson1985}. Underlying preferences remain intact; what changes is whether those preferences guide behavior. In habit mode, choices are driven by prior responses and contextual cues rather than by current attribute evaluation \cite{perezDickinson2020, pool2022}.
+This dual-system view of behavior has a direct consequence. If the value of an action changes while the environment remains familiar, a habit can produce mistakes: you may repeat a turn that is no longer the best one. Even though you value arriving at work just as much, the familiar corner retrieves the previous turn without its current consequences being reconsidered. In this situation, you should have paid attention again and reconsider where each turn will have taken you.
 
-This is not a narrow laboratory concern. Repeated decisions in the same stable context account for a large share of everyday economic behavior [CITE]. Commuting routes, supermarket choices, insurance renewals, and service plan selections are made repeatedly in stable environments, often without deliberate re-evaluation. DCEs are intended to recover preferences for exactly these domains. If the behavioral process of choosing shifts over the course of a long task, the parameters estimated from later trials will not reflect the goal-directed evaluation that the model assumes.
+The route example contains the two changes that matter here. A change in where a familiar turn leads tests whether the action is still controlled by its current value. In experiments, this is usually studied through outcome devaluation. Subjects first learn to perform an action for a valuable outcome; the outcome is then devalued and the action tested without further outcome presentations. If subjects continue to perform the action, it is considered habitual \citep{adamsDickinson1981,dickinson1985,perezDickinson2020}. Importantly, subjects may reject the outcome when it is presented freely. Its new value is therefore represented, but it no longer controls the action. A change in the landmarks asks a different question: whether the stable environment is supporting the habit.
 
-If goal-directed control gives way to habitual control during a long DCE, the expected signature is specific. WTP should remain stable, because preferences are intact. Just as in the case of animal and human studies, behavior is based on previous instances of performance of the action because the behavior itself keeps generating a explicit reinforcement signal (getting to your job, earning your salary at the end of the month): actions should be increasingly driven by the previous experience in the same situation rather than by current attribute values \citep{thorndike1911}. 
+What is less clear is whether overtraining produces the same transition in humans. Five experiments found no effect of extended training on sensitivity to outcome devaluation \citep{deWit2018}; a subsequent preregistered multilaboratory investigation likewise found no overall effect of training duration \citep{pool2022}. These failures do not imply that human behavior cannot become habitual. They show that repetition, as typically arranged in human experiments, has not been sufficient to produce the change in value control that defines a habit.
 
-Neuroscience identifies environmental uncertainty as the key signal arbitrating between these two systems \cite{daw2005}. When the environment is stable and predictable, the habitual system dominates and behavior becomes efficiently organized around stable contextual cues. When the environment becomes uncertain, a prediction error recruits the goal-directed system \cite{daw2005, lee2014}. This arbitration operates through attention: stability allows attention to narrow toward learned spatial cues, while uncertainty forces broader environmental search \cite{gottlieb2012, dayan2000}. In animal studies, an unexpected context change restores attentional breadth and returns control to goal-directed behavior \cite{bouton2020, thrailkill2018, bouton2024}.
+One condition may be critical: habits are learned and expressed in stable environments. When a response is repeated in the same context, features of that context can retrieve it without requiring its consequences to be reconstructed each time. By contrast, uncertainty makes the past less informative and creates a reason to inspect the present. Animal evidence supports this distinction: unexpected changes can return habitual responding to goal-directed control \citep{thrailkill2018,bouton2020,bouton2024}. Computational theories make the same general prediction. If control is given to the system whose predictions are more reliable, stability should favor repeating a habit, whereas disruption should restore sensitivity to current information \citep{daw2005,lee2014}.
 
-Evidence for the same process in humans has recently emerged from repeated decision-making in naturalistic and laboratory settings. Commuters persist in familiar routes until an external disruption forces them to explore alternatives \cite{larcom2017}. In repeated decision tasks, participants prone to habit-like strategies narrow attention toward familiar options and ignore superior alternatives \cite{henriquezJara2025}. In each case, attention is the mechanism through which stable environments generate habitual behavior. All of these examples, however, involve outcome feedback: participants receive information about the consequences of their decisions. Whether context stability alone, without any reward signal, is sufficient to produce the same shift has not been established.
+Attention may provide the process through which this change occurs. A predictable environment allows attention to narrow around learned locations; a change requires information to be located again. Animal work similarly links habits to declining attention to action consequences and their disruption to the recapture of attention \citep{thrailkill2018,bouton2020,bouton2024}. Attentional narrowing should therefore accompany reduced control by current value, whereas environmental disruption should broaden attention and restore value-sensitive behavior.
 
-To isolate the role of context stability, we used a setting in which outcome feedback is entirely absent: a standard DCE. If the shift from goal-directed to habitual control occurs under these conditions, three predictions follow. Attention should narrow during training, directly visible in the gaze record. The narrowing should leave no trace in raw choice repetition. An exogenous context change should broaden attention and shift the structural inertia parameter without altering WTP, confirming outcome insensitivity and identifying attention as the causal mechanism.
+Discrete-choice experiments (DCEs) provide an unusual test of this prediction. Participants repeatedly choose among alternatives described by attributes such as cost, time, comfort, and environmental impact. These attributes change across trials and determine the current utility of each alternative, while the organization of the choice environment remains stable. Standard models treat the resulting choices as expressions of stable preferences and recover relative values such as willingness-to-pay \citep{mcfadden1974,train2009}, but recent evidence has questioned whether participants inspect all available information \citep{hole2011,yegoryan2020}. What remains unclear is whether extended experience changes not only what they inspect, but whether previous choices continue to control choice even when their preferences should make them refrain from repeating those choices.
 
-We conducted a 150-trial transportation DCE in which participants chose between three alternatives described by cost, travel time, comfort, and CO\textsubscript{2} emissions while eye movements were recorded. The attribute layout was stable for 100 trials. At trial 101, the positions of the attribute rows were shuffled. The attribute values and the economic content of the choices were unchanged. This manipulation introduced spatial uncertainty without altering the options, isolating the effect of context stability on attention and behavioral control. An online replication with 80 participants using fixed and randomized disruption timing ruled out anticipation as a mechanism.
+In this paper, we translate the classic value criterion into repeated choice. The previously selected alternative can remain the best under current utility or cease to be the best because its attributes have changed. Staying in the first case is supported by current value. Staying in the second case is habit-like: the previous response persists even though current value supports switching. Habit formation should therefore appear as an increase in value-inconsistent staying, just as in the case of animals repeating choices that are no longer desirable.
 
-The results support all three predictions. During training, participants developed a spatial fixation habit: they memorized the attribute layout, stopped reading labels, and scanned values progressively faster, a process directly visible in the gaze data. Raw choice repetition showed no significant trend throughout. The structural model identified what choices could not show: attribute weights declined and the inertia coefficient rose during training while WTP remained stable throughout. When the context changed, attention broadened and the inertia coefficient changed; WTP did not. Context stability alone, without outcome feedback, is sufficient to shift behavioral control from goal-directed to habitual. The mechanism is attentional and directly measurable.
+Importantly, unlike animal experiments on which human-habit research is based, DCEs provide no realized outcome and no reward feedback. If participants increasingly repeat a previous choice when its current attributes no longer support it, the effect cannot be attributed to reinforcement from obtained outcomes. This possibility follows an old idea. Guthrie proposed that contiguity between a situation and a response can strengthen behavior without reward \citep{guthrie1935}; more recent computational work has revived the possibility of habits without values \citep{millerHabits2019}. This experiment therefore tests if this process can arise from freely generated, value-based choices in humans.
 
-\section*{Experimental Design}
+The present study tested this account in a 150-trial transportation DCE. The visual environment remained stable for 100 trials while gaze was recorded. At trial 101, only the spatial positions of the attribute rows changed; the alternatives and their values did not. We predicted that overtraining would narrow attention and increase value-inconsistent staying while relative preferences remained stable. We further predicted that disrupting the learned environment would broaden attention and restore value-sensitive choice. The critical question is whether repetition in a stable environment can produce habit-like choice in humans without outcome feedback.
 
-The experiment was a discrete-choice task involving repeated decisions between three transportation modes: bus, metro, and ride-hailing. Each alternative was described by four attributes: cost, time, comfort, and CO\textsubscript{2} emissions. The study comprised 150 trials per participant, divided into two phases. In the training phase, participants completed 100 trials in a stable context. The colors and positions of rows (attribute labels) and columns (option labels) were fixed during this phase. In the testing phase, participants completed 50 trials in which the position of attribute rows was shuffled every five trials. This manipulation was designed to disrupt attentional habits and re-engage exploratory, goal-directed attention \cite{dayan2000, gottlieb2012}.
+\section{Method}
 
-Attribute values in each trial were sampled through a standard DCE design procedure intended to ensure that no alternative dominated the others. In other words, no alternative was objectively better than the others across all attributes. The key manipulation was not the economic content of the options, but the stability of the visual environment. The stable phase allowed participants to learn the display. The disrupted phase broke that stable environment.
+We report how we determined our sample sizes, all data exclusions, all manipulations, and all measures collected in both studies. Neither the laboratory study nor the online study was preregistered. A generative language model was used to assist with language editing and manuscript drafting; it was not used to generate, analyze, or interpret data, and all scientific claims, analyses, and final text were determined and verified by the authors.
 
-\section*{Model}
+\subsection{Participants}
 
-The main claim of this paper is that a stable context induces spatial fixation habits that shift behavioral control from goal-directed to habitual, a process that is latent in the model and invisible in the raw choice data. Under stable conditions, people stop scanning broadly and concentrate attention on a fixed region, driving up choice inertia while underlying preferences remain stable. We therefore model utility as a function of the attributes, an inertia term, and an interaction between inertia and attention:
+\subsubsection{Laboratory sample.} Forty-five adults were recruited through internal university networks and an announcement posted on the institutional portal of the Faculty of Physical and Mathematical Sciences, Universidad de Chile. Eligibility was open to adults aged 18 to 75 years. Participants were tested individually in the NeuroLab facility of the Department of Industrial Engineering and were paid a fixed amount that did not depend on the options they chose.
+
+% TODO: demographics for the final laboratory sample (N = 42), from Bastian's current analysis.
+% Report: age M and SD (and range), gender counts, and the number wearing corrective lenses.
+% Do NOT reuse the figures in Munoz Delaveau (2025) -- those describe an earlier 39-participant
+% snapshot collected before the final round of testing. For reference only, that subset was
+% aged 20-26, 95% Universidad de Chile community, 19 women / 20 men, 11 wearing corrective lenses.
+Participants were [M age, SD, range] years of age; [n] were women and [n] were men, and [n] wore corrective lenses during the session. Most were members of the Universidad de Chile community.
+
+\subsubsection{Online sample.} Seventy-eight additional adults were recruited through Prolific and completed the same 150-trial task in the browser, without eye tracking. The online version was implemented in Pavlovia. % TODO: age M and SD, gender breakdown, and compensation for this sample.
+
+\subsubsection{Exclusions.} The same three criteria were applied to both samples before any analysis: a participant was excluded if the whole task lasted longer than 1~hr, if any single trial lasted longer than 3~min, or if the same alternative was selected on more than 80\% of trials. The first two criteria identify interrupted or unattended sessions; the third identifies participants who did not engage with the attribute information at all. Thresholds were set after inspecting the distributions of task duration and response variability, and before the habit analyses reported here. These criteria excluded 3 laboratory participants and 6 online participants, leaving 42 and 72 participants respectively, for a total of 114.
+
+\subsubsection{Sample size.} No a priori power analysis was conducted. The laboratory sample size was determined by the eye-tracking capacity and recruitment budget available to the project, and data collection ended when those resources were exhausted; the online sample was sized to provide a substantially larger set of choice observations for the joint estimation. Because the design places 150 observations within each participant, the number of trials rather than the number of participants is the binding constraint on the trial-level analyses. % TODO: confirm this description matches how collection actually stopped, and add the recruitment window dates.
+
+\subsubsection{Ethics.} The protocol was approved by the Comit\'{e} de \'{E}tica of the Faculty of Physical and Mathematical Sciences, Universidad de Chile (Protocol No. [XXXXXXX]). All participants provided written informed consent before taking part.
+
+\subsection{Design}
+
+Both studies used a within-participant design with 150 choice trials divided into two consecutive phases. During the \emph{stable phase} (trials 1--100), the spatial arrangement of the choice display was held completely constant. During the \emph{disrupted phase} (trials 101--150), the vertical order of the attribute rows was permuted, beginning with an unannounced permutation at trial 101.
+
+The row order presented during the stable phase was randomized across participants and then held fixed for all 100 training trials. The horizontal order of the three alternatives was identical for all participants and never changed. Any effect of the disruption is therefore not attributable to one particular layout, and the manipulation acted on the attribute dimension only, leaving the identity and screen position of each alternative intact.
+
+The two studies differed only in the schedule of permutations during the disrupted phase. In the laboratory study, rows were permuted every five trials. In the online study, participants were randomly assigned to a fixed-interval condition, which used the same five-trial schedule, or to a variable-interval condition, in which the number of trials between successive permutations was drawn from a Uniform(1, 10) distribution. Response-time trajectories and post-disruption recovery did not differ significantly between the two online conditions, so they were combined for all analyses reported below.
+
+Critically, the manipulation changed only where information appeared. The three alternatives, the four attributes, the distribution from which attribute values were drawn, and the economic structure of the decision were identical across phases.
+
+\subsection{Materials and Apparatus}
+
+On each trial, participants chose among three commuting alternatives---bus, metro, and ride-hailing---presented as the columns of a $4 \times 3$ matrix (Figure~\ref{fig:interface}). The four rows were the attributes: comfort (0--5 stars), cost (US\$), pollution (expressed as a number of trees, representing CO\textsubscript{2} emissions), and travel time (min). Alternative labels appeared in a header row above the matrix; attribute labels, with their units, appeared in a label column to the left of the matrix. Each attribute row was rendered in a distinct background color, so that a row could be identified by its color as well as by its position, and the color moved with the row when the layout was permuted. All attribute values were integers and were displayed in white boxes at the intersection of the corresponding row and column.
+
+Attribute levels were alternative specific, so that each mode spanned a plausible range for that mode (Table~\ref{tab:levels}). Choice sets were built by combining these levels and then optimizing the design with the ChoiceDesign Python package \citep{ignacio2020choicedesign}, which reduces the variance among presented values and minimizes dominated alternatives. No alternative was better than both others on every attribute, so each trial required a tradeoff rather than a lookup. Values were drawn so that a zero appeared with probability below 0.035\%.
+
+\begin{table}[H]
+\centering
+\caption{Attribute levels by alternative.}
+\label{tab:levels}
+\begin{tabular}{llll}
+\toprule
+Attribute & Bus & Metro & Ride-hailing \\
+\midrule
+Cost (US\$) & 3, 8, 15 & 0, 5, 8, 12 & 0, 7, 15, 20 \\
+Travel time (min) & 0, 10, 20, 30 & 0, 10, 15, 20 & 0, 10, 15, 25 \\
+Comfort (stars) & 0, 1, 3, 5 & 1, 3, 5 & 0, 1, 3, 5 \\
+Pollution (trees) & 0, 2, 5, 10 & 2, 5, 10 & 2, 5, 10 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The laboratory task was implemented in PsychoPy and run on three Acer TravelMate P215-54 laptops with external monitors. Gaze was recorded with Tobii Pro Spark eye trackers sampling at 60~Hz. Room lighting was controlled so that it did not interfere with the participant's view of the screen.
+
+\subsection{Procedure}
+
+After providing written consent, participants were seated and given the task instructions. They were asked to place themselves in a scenario in which they had to get to work, and to choose the option they most preferred on each trial. They were also asked not to move their head or chair during calibration and testing, to keep their gaze on the screen, not to cover their face, to avoid interruptions such as retrieving items or answering the phone, and not to discuss the experiment with peers. The eye tracker was then calibrated using the manufacturer's routine, after which participants saw a short instruction screen showing where to click.
+
+Participants then completed the 150 trials without a break. Trials were self-paced: the display remained on screen until the participant clicked one of the three alternatives, and the next trial began immediately. Participants were not told that the task had phases, and they received no warning that the layout would change.
+
+No outcome was ever realized and no feedback of any kind was delivered. Participants were not told whether a choice was good, no commute was simulated or experienced, and payment did not depend on the options chosen. The values shown on the screen were therefore the only information available about the worth of each alternative on a given trial, which is what makes it possible to attribute any growth in repetition to the stability of the display rather than to reinforcement from obtained outcomes.
+
+The online study followed the same procedure, delivered in the browser without eye tracking or calibration.
+
+After the task, participants completed a short questionnaire recording age, gender, and ocular conditions, and rated how relevant each of the four attributes had been to their decisions. Participants also described their experience of the task. These reports establish that the disruption was consciously detected: participants reported noticing the change and being surprised by it, and identified the row colors as the cue, because the colors moved with the rows when the order was permuted. The manipulation was therefore salient rather than subliminal, which is what the attention-recapture account requires; we return to this point in the Discussion.
+
+\subsection{Eye Tracking and Gaze Measures}
+
+The choice screen was divided into 19 non-overlapping regions of interest (ROIs): the 12 cells holding the attribute values (4 attributes $\times$ 3 alternatives), the 4 attribute labels, and the 3 alternative labels (Figure~\ref{fig:interface}). Dwell time was computed for each ROI on each trial by summing the durations of all gaze samples falling within it. These dwell times supplied both the attribute-specific measures and the trial-level gaze entropy defined in Equations~\ref{eq:shannon_entropy} and following.
+
+The following were recorded on every trial: participant identifier, trial number, response time, chosen alternative, the attribute values presented for each alternative, the screen coordinates of every label and value, dwell time per ROI, and pupil diameter per frame. Pupil diameter was recorded but is not analyzed here.
+
+A small number of trials were recorded with invalid (negative) durations, the result of a timing error in the presentation script that was corrected during data collection; these trials were removed.
+% TODO: valid-trial count from Bastian's current pipeline. The 42 retained participants contribute
+% 6,300 trials before cleaning; in the earlier 39-participant snapshot only 2 of 5,850 trials were
+% lost to this filter, so the final figure should be close to 6,300.
+After these exclusions, the laboratory dataset contained [insert updated number] valid choice observations.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.78\textwidth]{word_media/media/image2.png}
+    \caption{The choice display and the regions of interest used for the gaze analysis. Alternatives occupied fixed columns; attributes occupied rows that were held constant for the first 100 trials and permuted thereafter. Each attribute row carried a distinct background color. Yellow outlines mark the boundaries of the 19 regions of interest and were not visible to participants.}
+    \label{fig:interface}
+\end{figure}
+
+\subsection{Operationalizing Habitual Control}
+
+We first estimated an attribute-only choice model that excluded previous-choice inertia. For each participant and trial, this model provided the systematic utility of every alternative from its current attributes. Let $c_{n,t-1}$ denote participant $n$'s previous choice. We classified that alternative as currently best when
+
+\begin{equation}
+V_{n,t,c_{n,t-1}}=\max_j V_{n,t,j},
+\end{equation}
+
+and as not best otherwise. A stay occurred when $c_{n,t}=c_{n,t-1}$. Habitual control was operationalized as staying when the previous alternative was no longer supported by current utility:
+
+\begin{equation}
+P(c_{n,t}=c_{n,t-1}\mid
+V_{n,t,c_{n,t-1}}<\max_j V_{n,t,j}).
+\end{equation}
+
+For comparison, we also calculated staying when the previous alternative remained best. We compared these conditional probabilities during early training (trials 1--10), late training (trials 91--100), and immediately after the layout disruption (trials 101--110). Because inertia was excluded when current utility was calculated, prior choice could not make an alternative count as best. All inferential models preserved the panel structure of repeated trials within participants.
+
+\subsection{Latent-Attention Choice Model}
+
+To test whether attention changes the balance between current attribute information and previous responses, we modeled utility as a function of the attributes and a trial-specific inertia term:
 
 \begin{equation}
 U_{n,t,i} =
@@ -86,7 +164,7 @@ V(X_{n,t,i}, \beta_{n,t})
 + \varepsilon_{n,t,i}.
 \end{equation}
 
-Here, $I_{n,t,j}$ indexes whether alternative $j$ is supported by the learned layout or by the previous choice, and $\text{LatAttention}_{n,t}$ is the participant's attention on trial $t$. The effective inertia parameter is therefore trial-specific:
+Here, $I_{n,t,i}$ equals 1 when alternative $i$ was chosen on the preceding trial. The attribute and inertia coefficients were allowed to vary with latent attention and to have separate trajectories before and after the layout disruption:
 
 \begin{equation}
 \begin{split}
@@ -95,25 +173,15 @@ Here, $I_{n,t,j}$ indexes whether alternative $j$ is supported by the learned la
 \end{split}
 \end{equation}
 
-Attention is assumed to be an unobservable process that can be measured by eye tracking. Specifically, we used the entropy ($H_{n,t}$) of the attention pattern as an exogenous indicator of the level of attention paid to visual information:
+Attention was modeled as a latent process measured through gaze entropy ($H_{n,t}$), an index of how broadly dwell time was distributed across areas of interest:
 
 \begin{equation}
 H_{n,t} =\gamma_0+\gamma_{\text{Attention}}\text{LatAttention}_{n,t} + \varepsilon_{n,t},
 \end{equation}
 
-where $\varepsilon_{n,t}\sim N(0,\sigma_{H})$ and $\gamma_0, \gamma_{\text{Attention}}$ are fixed at 0 and 1 respectively for identification purposes. The latent attention in trial $t$ under simulation draw $r$ is:
+where the measurement intercept and loading were fixed at 0 and 1 for identification. Latent attention was predicted by response time, normalized trial, and separate pre- and post-disruption intercepts and slopes. The joint model therefore tested whether current attributes and the previous response changed their influence as visual search narrowed.
 
-\begin{align} 
-\text{LatAttention}_{n,t} ={}& \gamma_{0}D^{\mathrm{pre}}_{n,t} +\gamma_{0}^{\mathrm{post}}D^{\mathrm{post}}_{n,t} +\\
-&\gamma_{\text{RespTime}}\text{RespTime}_{n,t} \nonumber\\ &+ \left( \gamma^{\mathrm{pre}}D^{\mathrm{pre}}_{nt} +\gamma^{\mathrm{post}}D^{\mathrm{post}}_{nt} \right)\tau_{nt} +\\
-&\eta_{n,t}, \label{eq:latent_attention} 
-\end{align} 
-
-where $\tau_{n,t}$ is the normalized trial and $\eta_{n,t}\sim N(0,\varepsilon_{\eta})$.
-
-Standard approaches that omit this latent attention interaction suffer from observational equivalence---they cannot distinguish a blind habit from a calculated choice. By resolving this endogeneity using eye-tracking as a structural measurement equation, our model can accurately isolate true preference parameters. Furthermore, attribute coefficients and willingness-to-pay are allowed to change dynamically over trials and shift after the context change, allowing us to test whether the stable environment affects underlying preferences or only behavioral control.
-
-On the other hand, the entropy is calculated based on Shannon's entropy formula:
+Gaze entropy was calculated using Shannon's entropy formula:
 
 \begin{equation}
     H_{nt}=
@@ -121,7 +189,7 @@ On the other hand, the entropy is calculated based on Shannon's entropy formula:
 \label{eq:shannon_entropy}
 \end{equation}
 
-where $p_{n,t,k}$ is the probability of individual $n$ fixating at the AOI $a\in \mathcal{A}$ on trial $t$, which is obtained based on the total dwell time $d_{n,t,a}$ (the total time the individual fixated his gaze at an AOI $a$):
+where $p_{n,t,a}$ is the proportion of participant $n$'s dwell time allocated to area of interest $a\in \mathcal{A}$ on trial $t$:
 
 \begin{equation}
     p_{n,t,a}=\frac{d_{n,t,a}}{\sum_{a'\in \mathcal{A}}{d_{n,t,a'}}}.
@@ -133,8 +201,8 @@ Conditional on the latent attention, the choice probability is:
 \begin{split}
 P^C_{n,t,i}=&P(y_{n,t,i}=1|\text{LatAttention}_{n,t},\beta,\gamma) \\
 =&\frac{\exp(V(X_{n,t,i}, \beta_{n,t})
-+ \beta_{\text{Inertia},n,t} I_{n,t,i})} {\displaystyle\sum_{j\in\mathcal{C}}\exp(V(X_{n,t,i}, \beta_{n,t})
-+ \beta_{\text{Inertia},n,t} I_{n,t,i})}.
++ \beta_{\text{Inertia},n,t} I_{n,t,i})} {\displaystyle\sum_{j\in\mathcal{C}}\exp(V(X_{n,t,j}, \beta_{n,t})
++ \beta_{\text{Inertia},n,t} I_{n,t,j})}.
 \end{split}
 \end{equation}
 
@@ -155,7 +223,7 @@ P_{n,t,i}=&P(y_{n,t,i},H_{n,t}|\text{LatAttention}_{n,t},\beta,\gamma)\\
 \end{split}
 \end{equation}
 
-Then, the full likelihood function is given by:
+The full likelihood is:
 
 \begin{equation} 
 \begin{split}
@@ -163,90 +231,183 @@ L=&\prod_{n=1}^N \prod_{t=1}^T P^{H}_{n,t,i}\prod_{i\in \mathcal{C}} (P^{C}_{n,t
 \end{split}
 \end{equation}
 
-Note that the above expression is conditional on the Latent Attention random variable, which is not observed. Therefore, computing the log-likelihood requires simulating the random terms. The model was estimated following using the Maximum Simulated Likelihood approach, using $R=1000$ intra-individual Halton draws in Apollo \citep{hess2019apollo} to simulate the likelihood, using R 4.4.0 \citep{Rcore}, and was ran in the National Laboratory for High Performance Computing (NLHPC)\footnote{https://www.nlhpc.cl/}.
+Because latent attention is unobserved, the random terms were integrated by maximum simulated likelihood using 1,000 intra-individual Halton draws. The model was estimated in Apollo \citep{hess2019apollo} using R 4.4.0 \citep{Rcore}. Laboratory and online data were estimated jointly. Gaze entropy contributed to the measurement equation for laboratory participants; for online participants, the measurement contribution was set to $P^H_{n,t,i}=1$, so their choices contributed to the choice component of the likelihood. Estimation was performed at the National Laboratory for High Performance Computing.
 
-\clearpage
-\section*{Results}
+\section{Results}
 
-\begin{figure*}[t]
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{final_figure.png}
-    \caption{Summary of behavioral and model results. Dashed vertical lines mark trial 101 (layout manipulation). (\textbf{A}) Mean probability of choice repetition (pink, left axis) and mean gaze entropy (gray, right axis) across trials. Entropy declines during training; choice repetition shows no significant trend before (r = $-$0.033, p = 0.744) or after (r = $-$0.138, p = 0.34) the manipulation. (\textbf{B}) Mean response time in the laboratory and online samples. Both show a steep decline during training and a partial recovery after the context change. (\textbf{C}) Share of fixation time on the dominant area of interest. Rises steadily during training and levels off after the manipulation. (\textbf{D}) Probability of returning to the same area of interest on consecutive trials. Rises during training and drops sharply after the context change. (\textbf{E}) Gaze entropy as a function of log trial duration. Longer trials are associated with broader visual search. (\textbf{F}) Model-estimated trajectories for $\beta_\text{Inertia}$, latent attention, VTTS, and willingness-to-pay for CO\textsubscript{2}, comfort, and exploration. Latent attention and $\beta_\text{Inertia}$ inflect at the disruption; willingness-to-pay trajectories remain stable throughout.}
+    \includegraphics[width=\textwidth]{Figures/final_figure_model.png}
+    \caption{Summary of behavioral and modeling results. Probability of repeating the previous choice as a function of whether that option was currently better (utility maximizing) or worse than an available alternative. During overtraining, value-consistent staying decreased whereas value-inconsistent staying increased. Both changes reversed immediately after the spatial layout was disrupted. Error bars show confidence intervals that preserve the repeated-measures structure.}
+    \label{fig:value-staying}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.78\textwidth]{Figures/final_figure_stats.png}
+    \caption{Summary of results in observed behavior. Dashed vertical lines mark the layout disruption at trial 101. (\textbf{A}) Choice repetition remains flat as gaze entropy declines. (\textbf{B}) Response times decline during training and partly recover after disruption. (\textbf{C}) Fixation time concentrates on the dominant area of interest. (\textbf{D}) Returns to the same area increase during training and fall after disruption. (\textbf{E}) Longer trials involve broader visual search. (\textbf{F}) Latent attention and inertia change at disruption, whereas WTP remains stable.}
     \label{fig:results}
-\end{figure*}
+\end{figure}
 
-We organize the results around three findings. First, participants developed a spatial fixation habit during training: they memorized the attribute layout, stopped reading labels, and scanned values progressively faster. This is directly visible in the gaze record and left no trace in choices. Second, the structural model identified what choices could not show: as attention narrowed, attribute weights declined while the inertia coefficient rose in the opposite direction, and WTP remained stable throughout. Third, when the context changed, attention broadened and the inertia coefficient changed; WTP did not. Context stability alone, without outcome feedback, shifts behavioral control from goal-directed to habitual.
+The behavioral analysis is presented first because it provides the critical test of habitual control in the present task. Overtraining increased staying when current utility favored switching and reduced staying when it favored remaining. At the same time, gaze narrowed into a stereotyped spatial routine. Disrupting the learned layout restored both attentional breadth and value-sensitive staying, while relative preferences remained stable throughout. As shown below, the opposing conditional changes were not evident in the raw probability of repeating a choice.
 
-\subsection*{Attention Narrows During Training}
+\subsection{Overtraining Reduces Control by Current Value}
 
-Gaze entropy declined across training trials (Table~\ref{tab:entropy-model}). Participants scanned the display in a narrower pattern over time. After the context changed at trial 101, the decline partly reversed, indicating that the disruption prompted renewed visual search.
+Figure~\ref{fig:value-staying} separates repetitions that were supported by current utility from those that were not. During early training, participants were much more likely to stay when the previous option remained best than when another option was better. By the end of the stable phase, this discrimination had narrowed in both directions: value-consistent staying decreased, whereas value-inconsistent staying increased. The layout manipulation immediately reversed this interaction. Participants again became more likely to stay when staying was supported by current utility and less likely to stay when it was not.
+
+We tested this formally with a beta regression, appropriate because the probability of staying is bounded between 0 and 1. The model predicted $P^{\mathrm{stay}}_{nt}$ from trial ($t$), the manipulation ($M_{nt}=1$ for $t>100$), an indicator for whether the previously chosen alternative was no longer best ($\delta_{nt}$), and all of their interactions, with a participant-specific random intercept (Table~\ref{tab:beta-stay}).
+
+Every predicted effect was obtained. Participants were far less likely to stay when the previous alternative was no longer best ($\beta_{\delta}=-2.813$, $p<.001$), confirming that choice tracked current utility overall. Within training, staying declined when the previous alternative remained best ($\beta_{t}=-0.004$, $p<.001$) but increased when it did not ($\beta_{t \times \delta}=0.0067$, $p<.001$). This opposition is the signature of habit formation: current value became progressively less able to determine whether participants stayed.
+
+The manipulation reversed it. Staying when the previous alternative remained best returned toward its earlier level ($\beta_{M}=0.300$, $p=.055$), and value-inconsistent staying fell sharply ($\beta_{M \times \delta}=-0.454$, $p=.032$). Neither three-way term reached significance, indicating that the disruption shifted the level of value-inconsistent staying rather than changing how it evolved with further trials.
 
 \begin{table}[H]
 \centering
-\caption{Fixed-effect model predicting gaze entropy from trial and manipulation.}
-\label{tab:entropy-model}
-\begin{tabular}{lrrr}
+\caption{Beta regression predicting the probability of staying with the previously chosen alternative.}
+\label{tab:beta-stay}
+\begin{tabular}{lrrrr}
 \toprule
-Predictor & Estimate & Std. Error & $t$ value \\
+Predictor & Estimate & \textit{SE} & $z$ & $p$ \\
 \midrule
-Intercept & 2.070 & 0.042 & 49.786 \\
-Trial & $-$0.004 & 0.000 & $-$28.264 \\
-Manipulation & $-$0.003 & 0.046 & $-$0.067 \\
-Trial $\times$ Manipulation & 0.002 & 0.000 & 4.347 \\
+Intercept & 1.1270 & 0.0267 & 42.14 & $<.001$ \\
+Previous alternative not best ($\delta$) & $-$2.8130 & 0.0357 & $-$78.87 & $<.001$ \\
+Trial & $-$0.0040 & 0.0004 & $-$9.16 & $<.001$ \\
+Manipulation & 0.2998 & 0.1559 & 1.92 & .055 \\
+Trial $\times$ Manipulation & 0.0001 & 0.0013 & 0.07 & .941 \\
+Trial $\times$ $\delta$ & 0.0067 & 0.0006 & 11.39 & $<.001$ \\
+Manipulation $\times$ $\delta$ & $-$0.4543 & 0.2116 & $-$2.15 & .032 \\
+Trial $\times$ Manipulation $\times$ $\delta$ & $-$0.0006 & 0.0018 & $-$0.33 & .740 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\noindent Model: entropy $\sim$ Trial $\times$ (Trial $>$ 100) + (1 $|$ participant), $R^2 = .586$.
+\noindent Participant-specific random intercept; $R^2 = .868$, AIC $=-20{,}428.5$, BIC $=-20{,}351.1$, log-likelihood $=-10{,}224.2$.
 
-\subsection*{Spatial Fixation Habits Form and Break}
+These opposing movements explain why the habit is not apparent in marginal repetition. Overtraining did not simply make every response more repetitive. It specifically reduced how strongly current value determined whether participants stayed or switched.
 
-The narrowing of attention took a specific spatial form. The share of fixation time on the most-attended area of interest rose steadily from around 19\% at trial 1 to 25\% by trial 100 (Figure~\ref{fig:results}C). The probability of returning to the same area on consecutive trials rose from 16\% to 27\% over the same period (Figure~\ref{fig:results}D). Participants were not just attending to fewer attributes in general; they were settling into a fixed spatial routine. When the context changed at trial 101, both patterns reversed immediately. The probability of fixating the same area dropped and fixation time redistributed across the display.
+\subsection{Attention Narrows During Training}
 
-\subsection*{The Habit Is Not Visible in Choices}
+Gaze entropy declined steadily across the stable phase ($r=-.292$, $p<.01$): participants scanned the display in an increasingly narrow pattern as training progressed. The manipulation interrupted this. Entropy rose abruptly at trial 101, and across the disrupted phase it no longer declined with trial number in any meaningful way ($r=-.0066$, $p<.01$). Visual search therefore not only broadened at the moment the layout changed, it stopped renarrowing thereafter, consistent with a display that had ceased to be predictable.
 
-Despite these attentional changes, the raw probability of repeating the same choice showed no significant trend during training (r = $-$0.033, p = 0.744) and no significant trend after the manipulation (r = $-$0.138, p = 0.34; Figure~\ref{fig:results}A). The habit operated at the level of where people looked, not what they chose. This is expected: the task was designed so that no option dominated across attributes, and attribute levels changed on every trial. The habitual pull toward the previous choice was continuously counteracted by utility differences, leaving the raw repetition rate flat.
+Because the size of such a difference depends on how wide a window is taken around the disruption, we repeated the comparison for every window from 1 to 50 trials on each side (Figure~\ref{fig:sensitivity-entropy}). The increase in entropy remained significant across the whole range, so the effect is not an artifact of one arbitrary choice of window. Over a longer horizon attention would presumably renarrow as the new arrangement itself became familiar.
 
-\subsection*{Longer Trials Are More Exploratory}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Figures/sensitivity_entropy.png}
+    \caption{Sensitivity of the entropy difference to window width. Each point compares mean gaze entropy in the $k$ trials before and the $k$ trials after the layout disruption, for $k=1$ to $50$.}
+    \label{fig:sensitivity-entropy}
+\end{figure}
+
+\subsection{Spatial Fixation Habits Form and Break}
+
+The narrowing of attention took a specific spatial form. The share of fixation time on the most-attended area of interest rose steadily from around 19\% at trial 1 to 25\% by trial 100 (Figure~\ref{fig:results}C). The probability of returning to the same area on consecutive trials rose from 16\% to 27\% over the same period (Figure~\ref{fig:results}D). Participants were not just attending to fewer attributes in general; they were settling into a fixed spatial routine. When the context changed at trial 101, both patterns reversed immediately. The probability of fixating the same area dropped, and fixation time redistributed across the display.
+
+Comparing the 20 trials on either side of the disruption, the dominant area of interest received between 1.73\% and 3.36\% less of the trial's viewing time afterwards ($p=.05$); comparing only the last trial before with the first trial after, the difference reached 6\%. These magnitudes are substantial relative to the display. With 19 areas of interest, perfectly even viewing would allocate 5.26\% to each, so a shift of 3\% to 6\% represents a large fraction of the whole range over which this measure can move. As with entropy, the difference remained negative and significant for every window from 1 to 50 trials on each side (Figure~\ref{fig:sensitivity-aoi}).
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Figures/sensitivity_dominant_AOI.png}
+    \caption{Sensitivity of the change in dominant-area viewing share to window width, for windows of 1 to 50 trials on each side of the disruption.}
+    \label{fig:sensitivity-aoi}
+\end{figure}
+
+\subsection{Raw Repetition Conceals the Transfer of Control}
+
+The raw probability of repeating the same choice showed no significant trend during training ($r=-.033$, $p=.744$) or after the manipulation ($r=-.138$, $p=.34$; Figure~\ref{fig:results}A). Figure~\ref{fig:value-staying} shows why. During training, participants repeated less when repetition was value consistent and more when it was value inconsistent. Aggregating across these conditions caused the two changes to cancel.
+
+\subsection{Longer Trials Are More Exploratory}
 
 Across all trials and participants, longer response times were associated with higher gaze entropy (Figure~\ref{fig:results}E). Trials completed quickly involved a narrower visual search. As participants settled into a spatial routine, they also chose faster. Response time is therefore a behavioral correlate of attentional breadth, and the steep RT decline during training (Figure~\ref{fig:results}B) mirrors the entropy decline.
 
-\subsection*{Response Times Replicate Online}
+\subsection{Response Times Replicate Online}
 
-Mean response times showed the same trajectory in both the laboratory and online samples: a steep decline during training and a partial recovery after the context change (Figure~\ref{fig:results}B). Online participants had no eye-tracking, but their response-time pattern was indistinguishable from the laboratory sample. This confirms that the attentional dynamic is not specific to the laboratory setting.
+Mean response times showed the same trajectory in both the laboratory and online samples: a steep decline during training and a partial recovery after the context change (Figure~\ref{fig:results}B). Comparing the 20 trials on either side of the disruption, responses immediately afterwards were slower by 1.18 to 2.89~s in the laboratory sample and by 0.69 to 2.46~s in the online sample ($p=.05$). The two samples therefore agree both in shape and in magnitude, even though only the laboratory participants were eye-tracked. This confirms that the effect is not specific to the laboratory setting.
 
-\subsection*{The Structural Model Reveals What Choices Hide}
+The slowing was concentrated around the disruption itself. Repeating the comparison across windows of 1 to 50 trials, the difference was largest for the narrowest windows and vanished as the window widened (Figure~\ref{fig:sensitivity-rt}), so response times returned to their previous level once participants had learned the new arrangement. This is the expected signature of a transient return to controlled processing rather than a lasting change in how long decisions took.
 
-The structural model estimated what the choice data could not show. As latent attention declined across training, attribute betas fell in magnitude while the inertia coefficient rose (Figure~\ref{fig:results}F): the two moved in opposite directions. Willingness-to-pay for travel time, CO\textsubscript{2}, comfort, and exploration, the ratio of each attribute beta to the cost beta, remained stable throughout training and did not shift at the disruption, because the attribute betas declined proportionally. This combination (falling attribute betas, rising inertia, and flat willingness-to-pay) is the signature of habitual control identified by this design. At trial 101, when the context changed, the inertia coefficient reversed direction. Because the only change at that moment was the spatial arrangement of attributes, and not the options or their values, this reversal is attributable to the forced return to active visual search.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Figures/sensitivity_resp_time.png}
+    \caption{Sensitivity of the response-time difference to window width. Points show the mean difference and 95\% confidence interval for windows of 1 to 50 trials on each side of the disruption.}
+    \label{fig:sensitivity-rt}
+\end{figure}
 
-\section*{Discussion}
+\subsection{The Structural Model Reveals What Choices Hide}
 
-We show that a shift from goal-directed to habitual behavioral control occurs without outcome feedback. In a 150-trial discrete choice experiment with a stable repeated context, participants developed a spatial fixation habit over 100 trials: they memorized the attribute layout, stopped reading labels, and scanned values progressively faster. This was directly visible in the gaze record and left no trace in choices: the raw probability of repeating the same choice showed no significant trend throughout training.
+The structural model estimated what the choice data could not show. Every parameter changed in magnitude across trials. To place them on a common scale, we divided each parameter's estimate at trial $t$ by its estimate on the first trial, which expresses each coefficient as a proportion of its starting value and makes attributes measured in different units directly comparable.
 
-A structural model that separates attribute-driven choice from inertia revealed the hidden process. As attention narrowed, attribute betas fell in magnitude and the inertia coefficient rose, even though raw choice repetition was flat. This asymmetry is informative. If choices had simply become noisier overall, a common pattern when participants disengage, every coefficient would shrink together, inertia included. Instead, inertia moved in the opposite direction: as attribute evaluation weakened, the previous choice became the strongest remaining predictor of the current one, and the inertia coefficient absorbed the explanatory power that attribute evaluation no longer provided. Willingness-to-pay, the ratio of the attribute betas to the cost beta, remained stable throughout, because the decline was proportional across attributes: preferences were intact even as the process governing choice moved away from them. This combination (weakening attribute betas, rising inertia, and flat willingness-to-pay) is the signature of habitual control in the learning literature \cite{adamsDickinson1981, dickinson1985}: outcome insensitivity, where the value representations are intact but behavior is no longer governed by them. Without eye-tracking, this shift is undetectable: there is no signal in the choice data that anything changed during training.
+Expressed this way, the attribute parameters and the inertia parameter moved in opposite directions during training (Figure~\ref{fig:results}F). All four attribute parameters declined with trial number, and they declined at very nearly the same rate: the correlations were $-.568$ for CO\textsubscript{2} and comfort and $-.567$ for cost and time, all $p<.001$ (Table~\ref{tab:param-corr}). Inertia rose over the same trials at a comparable rate, $r=.542$, $p<.001$.
 
-The context change at trial 101 provides evidence that attention is the causal mechanism. When attribute positions were shuffled, gaze entropy increased and the inertia coefficient changed. WTP did not change. The attention rebound could partly reflect novelty: any unfamiliar context captures gaze regardless of whether a habit had formed. But the main evidence for the habit rests on the training-phase trajectory, not the disruption, and WTP stability after the context change rules out non-specific arousal as the mechanism. The disruption changed only the spatial arrangement of attributes, not the options or their values, so whatever mediated the change in the inertia coefficient must be related to spatial processing. After the disruption, the share of fixation time directed to the eventually chosen alternative increased, consistent with deliberate evaluation replacing the spatial routine. Prior work with the attentional Drift Diffusion Model has shown that fixation predicts choice \cite{krajbich2010, krajbichRangel2011}, but causal direction is difficult to establish in short tasks where attention and preference are both free to vary. Our design holds economic content constant and changes only the spatial context, isolating attention as the mechanism through which context stability induces habitual control.
+That the four attribute parameters declined at a common rate is what keeps relative preferences fixed. Willingness-to-pay is the ratio of each attribute parameter to the cost parameter, so a proportional decline in numerator and denominator leaves the ratio unchanged. Willingness-to-pay for travel time, CO\textsubscript{2}, and comfort accordingly remained stable throughout training and did not shift at the disruption. This combination---falling attribute parameters, rising inertia, and flat willingness-to-pay---is the signature of habitual control identified by this design: participants did not come to want different things, but current attribute information became progressively less able to determine what they chose, while the previous response became more able to.
 
-The key theoretical result is that outcome feedback is not required for habit formation. Classical S-R theory holds that contiguity alone — the co-occurrence of a stimulus and a response — is sufficient for association formation, without reinforcement \cite{guthrie1935}, a position recently supported by computational accounts of habit formation \cite{millerHabits2019}. Prior demonstrations of context-induced habitization in human decision-making have, however, involved feedback \cite{larcom2017, henriquezJara2025, tricomi2009, pool2022}. Here, participants received no information about the consequences of their choices. The habit formed through repetition in a stable visual environment alone. This extends the conditions under which habitual control develops and identifies attention as the primary mechanism: a stable context allows attention to narrow toward a spatial routine, and that routine progressively decouples choice from deliberate attribute evaluation. Because repeated decisions in stable environments account for a large share of everyday economic behavior [CITE], this process is likely more common in real-world preference elicitation than laboratory studies of habit formation suggest.
+After the disruption this time dependence largely disappeared. Every correlation fell by roughly a factor of seven, to between $-.086$ and $-.087$ for the attribute parameters and $.082$ for inertia. The parameters stopped drifting with trial number, indicating that the manipulation not only reversed the direction of the inertia effect but arrested the progressive reweighting that had been underway throughout training.
 
-For applied researchers using DCEs, the implication is direct. A long DCE with a stable repeated context is not a neutral measurement instrument. The stable context changes the behavioral process of choosing, and that change is not visible in choice data. Underlying preferences, measured by WTP, remain stable throughout, which validates welfare analysis based on these estimates. But the process through which those preferences translate into choices changes over the task: early trials involve deliberate attribute evaluation, while later trials are increasingly governed by spatial inertia. Standard choice models that omit this process will misattribute habitual responding to preference-driven choice \cite{pool2022}. Identifying the mechanism requires measuring attention directly.
+\begin{table}[H]
+\centering
+\caption{Correlation between each parameter's relative scale and trial number, before and after the disruption.}
+\label{tab:param-corr}
+\begin{tabular}{lrr}
+\toprule
+ & \multicolumn{2}{c}{Correlation with trial} \\
+\cmidrule(lr){2-3}
+Parameter & Before & After \\
+\midrule
+Cost scale    & $-$.567 & $-$.087 \\
+Travel time scale & $-$.567 & $-$.087 \\
+Comfort scale & $-$.568 & $-$.087 \\
+CO\textsubscript{2} scale & $-$.568 & $-$.086 \\
+Inertia scale & .542 & .082 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-\matmethods{
-\textbf{Participants and Experimental Task.} Thirty-nine participants completed 150 discrete choice tasks simulating a daily commute. On each trial, participants chose between three transport alternatives described by four attributes: cost, travel time, comfort, and CO\textsubscript{2} emissions. Attribute levels were fully combined and optimized using the ChoiceDesign Python package to minimize dominated alternatives and ensure an active processing baseline. To induce and test spatial habituation, the visual layout of the attributes remained perfectly stable for the first 100 trials. At trial 101, the spatial location of the attributes was unexpectedly disrupted, though the underlying economic options remained identical. The experiment was implemented in PsychoPy and conducted under controlled laboratory conditions.
+\noindent All correlations $p<.001$.
 
-\textbf{Online Replication.} To assess the generalizability of the behavioral findings, 80 additional participants completed the identical 150-trial task online, without eye-tracking. Participants were randomly assigned to one of two layout-disruption conditions: a fixed-interval condition in which the attribute layout was scrambled every 5 trials after trial 100 (matching the laboratory procedure, $n = 40$), and a variable-interval condition in which the scramble timing was drawn from a Uniform(1, 10) distribution ($n = 40$). No significant behavioral differences were found between the two conditions: the response-time trajectory and post-disruption recovery were equivalent across groups. This null result rules out anticipation as a mechanism. The recapture of attention does not require participants to predict when the layout will change; the salience of the change itself is sufficient. The two online groups were therefore collapsed for all subsequent analyses.
+At trial 101, when the context changed, the inertia coefficient reversed direction. Because the only change at that moment was the spatial arrangement of attributes, and not the options or their values, this reversal is attributable to the forced return to active visual search.
 
-\textbf{Eye-Tracking and Econometric Analysis.} Visual attention was recorded using Tobii Pro Spark eye-trackers sampling at 60 Hz. Fixation durations were computed by summing gaze events within 19 predefined Regions of Interest (ROIs), allowing us to calculate trial-specific gaze entropy and attribute-specific dwell times. After excluding trials with invalid timestamps or recording errors, the final dataset comprised 5,848 valid choice observations (laboratory sample). The laboratory and online samples were estimated jointly using a structural Latent Attention discrete choice model in R \cite{rstudio2020}. Gaze entropy enters the likelihood as a measurement equation for latent attention only for laboratory participants; for online participants the entropy term is set to $P^H_{n,t,i} = 1$, so they contribute to identifying the choice and inertia-attention parameters through choices alone. This model treats choice inertia as an endogenous function of visual search, using gaze entropy as a structural measurement equation to resolve observational equivalence. Full details regarding stimulus generation, eye-tracking calibration, ROI definitions, and the structural equation derivations are provided in the Supporting Information (SI) Appendix.
+\section{Discussion}
 
-}
-\showmatmethods{}
+The present study provides evidence that extended training in a stable environment produces habit-like control during human choice. Using a DCE in which the attributes changed on every trial, it was observed that participants became more likely to repeat a previous choice when its current utility no longer supported it. At the same time, they became less likely to stay when the previous choice remained the best alternative. The disruption of the learned layout reversed both effects. More generally, these results show that the classic value criterion for habitual responding can be translated into an ongoing multiattribute choice task.
 
-\dataavail{All data, study materials, and analysis code are openly available at \url{https://osf.io/6xg37/}. This includes raw data, preprocessing scripts, experimental materials, and R code for all statistical analyses reported in the paper.}
+Importantly, the effect was not evident in the raw probability of repeating a choice. This measure remained stable because it combined two different events: staying when current utility supported staying and staying when it supported switching. These probabilities moved in opposite directions during training and after the layout manipulation. The absence of a trend in raw repetition does not therefore imply that the process controlling choice remained constant. Rather, overtraining changed the conditions under which previous choices were repeated.
 
-\acknow{Omar David Perez is supported by ANID-SIA 85220023, and ANID-FONDECYT 1261338. Bastian Henriquez-Jara is supported by ANID-FONDECYT 1230050.}
-\showacknow{}
+These data are readily anticipated by theories in which environmental uncertainty determines whether goal-directed or habitual systems control behavior \citep{daw2005, lee2014}. For 100 trials, participants encountered the same visual organization and could rely increasingly on the learned context and their previous responses. At trial 101, the layout changed, but the alternatives, their attributes, and the economic structure of the task did not. The immediate return of value-sensitive choice is consistent with the idea that uncertainty made previous responses less reliable and brought current information back into control. Although no formal arbitration model was fitted, this account explains why stability, rather than repetition in isolation, is important for the present effect.
 
-\bibsplit[3]
+Attention provides a possible mechanism for this transition. During the stable phase, visual search became narrower and more stereotyped: participants returned to the same locations, consulted labels less, and responded faster. When the layout was disrupted, visual search broadened at the same time that value sensitivity returned. This result accords with animal data linking habitual responding to reduced attention to action consequences \citep{thrailkill2018, bouton2020, bouton2024}. Response time alone could not establish this point because fast decisions can result either from efficient evaluation or from failing to evaluate current information. The eye movements show that the content of visual search changed with training. They do not, however, establish that attention causally mediated the behavioral effect, as spatial stability rather than attention itself was manipulated.
+
+The structural model gives a similar description of the choice process. Attribute coefficients declined proportionally during training, so the WTP ratios remained stable, whereas previous-choice inertia acquired more influence. In other words, participants did not come to value time, cost, comfort, or emissions differently; instead, these attributes became less effective in determining choice. A general loss of engagement could also reduce the magnitude of the attribute coefficients, but would not readily explain the increase in value-inconsistent staying, the opposite movement of inertia, or the recovery of value sensitivity after disruption. The agreement between the conditional probabilities and the structural model is therefore important.
+
+One novel aspect of the present design is the absence of outcome feedback. In a conventional instrumental procedure, devaluation asks whether responding persists after the value of an obtained outcome changes. No outcome was obtained here: the displayed attributes provided all the information about the current value of each alternative. Habitual control was therefore defined as repeating a previous choice when those values supported another response. This is a functional analogue of outcome insensitivity, and is consistent with Guthrie's contiguity account and with recent computational models in which repetition can strengthen responses without value reinforcement \citep{guthrie1935, millerHabits2019}.
+
+Related evidence comes from the unrewarded-habit task. \citet{nebe2024} manipulated the frequency of instructed responses to neutral stimuli and found a small bias in a subsequent free-choice test. The present task differs in two important respects. The choices were freely generated, and the value of the alternatives changed continuously during training. Thus, the results do not merely show that frequent responding can bias a later choice, but that repetition can reduce control by current value during the task in which the habit develops.
+
+Previous DCE studies have shown that incomplete attribute attendance can affect preference estimates \citep{yegoryan2020}, and that self-reported habits and previous choices can predict subsequent attention and choice \citep{blake2020}. However, these studies did not investigate whether overtraining produced a habit during the experiment. Habit was measured before the task, or previous choice was treated as a learning effect without testing whether it opposed current utility. The present analysis provides such a test: repetition is habit-like only when the current attributes favor a different alternative.
+
+Several limitations should be noted. The eye-tracking sample was modest and the habit analysis was not preregistered. In addition, the stable phase always preceded the disrupted phase, and therefore the immediate recovery at trial 101 may include an effect of novelty. Participants' own reports confirm that the change was noticed and was experienced as surprising, and that the row colors were the cue by which it was detected. This is what the present account requires, since a disruption that went unnoticed could not recapture attention, but it does mean that the recovery cannot be separated from the surprise that accompanied it. Novelty cannot, however, explain the gradual increase in value-inconsistent staying during stable training, which developed while the environment was entirely unchanged. Finally, option identities remained in fixed columns while attribute rows were shuffled. The experiment shows that disrupting the learned spatial environment reduced habit-like choice, but it cannot fully separate an option habit from a motor or spatial response habit. A direct manipulation of attention will also be necessary to establish whether attentional narrowing is required for the behavioral effect.
+
+In summary, extended choice in a stable DCE narrowed attention and made previous responses more likely to persist when current utility supported switching. This change occurred while relative preferences remained stable and in the absence of outcome feedback. Disrupting the learned environment restored broader attention and value-sensitive choice. The present results suggest that stable repetition may be sufficient for habit-like control in humans, provided that habit is assessed through the loss of control by current value and not by the raw probability of repeating a response.
+
+\section{Data Availability}
+
+The choice and eye-tracking data supporting the findings of this study, together with the study materials, are openly available in the Open Science Framework repository at \url{https://osf.io/6xg37/}.
+
+\section{Code Availability}
+
+The preprocessing scripts and the analysis and model-estimation code used to generate the results reported here are openly available in the same Open Science Framework repository at \url{https://osf.io/6xg37/}.
+
+\section{Acknowledgements}
+
+Omar David Perez was supported by ANID-SIA 85220023 and ANID-FONDECYT 1261338. Bastian Henriquez-Jara was supported by ANID-FONDECYT 1230050. Model estimation was performed at the National Laboratory for High Performance Computing (NLHPC).
+
+\section{Author Contributions}
+
+O.D.P. and B.H.J. designed the study. S.M. implemented the task and collected the data. S.M. and B.H.J. analyzed the data. O.D.P. and B.H.J. wrote the manuscript. All authors reviewed and approved the final manuscript.
+
+\section{Competing Interests}
+
+The authors declare no competing interests.
+
 \bibliography{bib/references}
 
 \end{document}
+
