@@ -16,3 +16,14 @@ output/*
 master.tar.gz
 master.zip
 LyX_PNAS-master/
+
+# Participant-identifying data - never commit
+Demograf*.csv
+*_demografia*.csv
+
+# Raw participant-level online data - never commit
+data/
+data 2/
+online_data/
+prolific_demographic_export_*.csv
+online_prolific_*.csv
