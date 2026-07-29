@@ -242,14 +242,14 @@ Because latent attention is unobserved, the random terms were integrated by maxi
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{Figures/final_figure_model.png}
-    \caption{Summary of behavioral and modeling results. Probability of repeating the previous choice as a function of whether that option was currently better (utility maximizing) or worse than an available alternative. During overtraining, value-consistent staying decreased whereas value-inconsistent staying increased. Both changes reversed immediately after the spatial layout was disrupted. Error bars show confidence intervals that preserve the repeated-measures structure.}
+    \caption{Model parameters and value-dependent staying. (\textbf{A}) Each attribute parameter and the inertia parameter expressed relative to its value on the first trial, so that coefficients in different units are directly comparable. Faint lines show individual participants, solid lines the fitted trend, and the dashed line marks the layout disruption at trial 101. All four attribute parameters (CO\textsubscript{2}, comfort, cost, time) decline across training, whereas the inertia parameter rises; both trends flatten after the disruption. (\textbf{B}) Probability of repeating the previous choice when that option was still the best available (\emph{better}) and when it was not (\emph{worse}), for early training (trials 1--10), late training (trials 91--100), and immediately after the disruption (trials 101--110). Across training, staying fell when it was supported by current utility and rose when it was not; the disruption reversed both movements. Error bars show confidence intervals that preserve the repeated-measures structure. $^{***}p<.001$; $^{****}p<.0001$; ns, not significant.}
     \label{fig:value-staying}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.78\textwidth]{Figures/final_figure_stats.png}
-    \caption{Summary of results in observed behavior. Dashed vertical lines mark the layout disruption at trial 101. (\textbf{A}) Choice repetition remains flat as gaze entropy declines. (\textbf{B}) Response times decline during training and partly recover after disruption. (\textbf{C}) Fixation time concentrates on the dominant area of interest. (\textbf{D}) Returns to the same area increase during training and fall after disruption. (\textbf{E}) Longer trials involve broader visual search. (\textbf{F}) Latent attention and inertia change at disruption, whereas WTP remains stable.}
+    \includegraphics[width=0.72\textwidth]{Figures/final_figure_stats.png}
+    \caption{Attention and response time across the experiment. Dashed vertical lines mark the layout disruption at trial 101; trends before and after the disruption are fitted separately. (\textbf{A}) Mean scaled gaze entropy falls steadily across the stable phase, rises at the disruption, and then stops falling. (\textbf{B}) Mean response time declines during training and partly recovers after the disruption, with the same trajectory in the laboratory and online samples. (\textbf{C}) The share of viewing time on the dominant area of interest rises across training and then no longer increases. (\textbf{D}) The probability of returning to the same dominant area on consecutive trials rises across training and falls after the disruption. Shaded bands are 95\% confidence intervals.}
     \label{fig:results}
 \end{figure}
 
@@ -321,11 +321,11 @@ Comparing the 20 trials on either side of the disruption, the dominant area of i
 
 \subsection{Raw Repetition Conceals the Transfer of Control}
 
-The raw probability of repeating the same choice showed no significant trend during training ($r=-.033$, $p=.744$) or after the manipulation ($r=-.138$, $p=.34$; Figure~\ref{fig:results}A). Figure~\ref{fig:value-staying} shows why. During training, participants repeated less when repetition was value consistent and more when it was value inconsistent. Aggregating across these conditions caused the two changes to cancel.
+The raw probability of repeating the same choice showed no significant trend during training ($r=-.033$, $p=.744$) or after the manipulation ($r=-.138$, $p=.34$). Figure~\ref{fig:value-staying} shows why. During training, participants repeated less when repetition was value consistent and more when it was value inconsistent. Aggregating across these conditions caused the two changes to cancel.
 
 \subsection{Longer Trials Are More Exploratory}
 
-Across all trials and participants, longer response times were associated with higher gaze entropy (Figure~\ref{fig:results}E). Trials completed quickly involved a narrower visual search. As participants settled into a spatial routine, they also chose faster. Response time is therefore a behavioral correlate of attentional breadth, and the steep RT decline during training (Figure~\ref{fig:results}B) mirrors the entropy decline.
+Across all trials and participants, longer response times were associated with higher gaze entropy. Trials completed quickly involved a narrower visual search. As participants settled into a spatial routine, they also chose faster. Response time is therefore a behavioral correlate of attentional breadth, and the steep RT decline during training (Figure~\ref{fig:results}B) mirrors the entropy decline.
 
 \subsection{Response Times Replicate Online}
 
@@ -337,7 +337,7 @@ The slowing was concentrated around the disruption itself. Repeating the compari
 
 The structural model estimated what the choice data could not show. Every parameter changed in magnitude across trials. To place them on a common scale, we divided each parameter's estimate at trial $t$ by its estimate on the first trial, which expresses each coefficient as a proportion of its starting value and makes attributes measured in different units directly comparable.
 
-Expressed this way, the attribute parameters and the inertia parameter moved in opposite directions during training (Figure~\ref{fig:results}F). All four attribute parameters declined with trial number, and they declined at very nearly the same rate: the correlations were $-.568$ for CO\textsubscript{2} and comfort and $-.567$ for cost and time, all $p<.001$ (Table~\ref{tab:param-corr}). Inertia rose over the same trials at a comparable rate, $r=.542$, $p<.001$.
+Expressed this way, the attribute parameters and the inertia parameter moved in opposite directions during training (Figure~\ref{fig:value-staying}A). All four attribute parameters declined with trial number, and they declined at very nearly the same rate: the correlations were $-.568$ for CO\textsubscript{2} and comfort and $-.567$ for cost and time, all $p<.001$ (Table~\ref{tab:param-corr}). Inertia rose over the same trials at a comparable rate, $r=.542$, $p<.001$.
 
 That the four attribute parameters declined at a common rate is what keeps relative preferences fixed. Willingness-to-pay is the ratio of each attribute parameter to the cost parameter, so a proportional decline in numerator and denominator leaves the ratio unchanged. Willingness-to-pay for travel time, CO\textsubscript{2}, and comfort accordingly remained stable throughout training and did not shift at the disruption. This combination---falling attribute parameters, rising inertia, and flat willingness-to-pay---is the signature of habitual control identified by this design: participants did not come to want different things, but current attribute information became progressively less able to determine what they chose, while the previous response became more able to.
 
