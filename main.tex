@@ -91,7 +91,7 @@ The two studies differed only in the schedule of permutations during the disrupt
 
 Critically, the manipulation changed only where information appeared. The three alternatives, the four attributes, the distribution from which attribute values were drawn, and the economic structure of the decision were identical across phases.
 
-\subsection{Materials and Apparatus}
+\subsection{Materials and apparatus}
 
 On each trial, participants chose among three commuting alternatives---bus, metro, and ride-hailing---presented as the columns of a $4 \times 3$ matrix (Figure~\ref{fig:interface}). The four rows were the attributes: comfort (0--5 stars), cost (US\$), pollution (expressed as a number of trees, representing CO\textsubscript{2} emissions), and travel time (min). Alternative labels appeared in a header row above the matrix; attribute labels, with their units, appeared in a label column to the left of the matrix. Each attribute row was rendered in a distinct background color, so that a row could be identified by its color as well as by its position, and the color moved with the row when the layout was permuted. All attribute values were integers and were displayed in white boxes at the intersection of the corresponding row and column.
 
@@ -121,13 +121,11 @@ After providing written consent, participants were seated and given the task ins
 
 Participants then completed the 150 trials without a break. Trials were self-paced: the display remained on screen until the participant clicked one of the three alternatives, and the next trial began immediately. Participants were not told that the task had phases, and they received no warning that the layout would change.
 
-No outcome was ever realized and no feedback of any kind was delivered. Participants were not told whether a choice was good, no commute was simulated or experienced, and payment did not depend on the options chosen. The values shown on the screen were therefore the only information available about the worth of each alternative on a given trial, which is what makes it possible to attribute any growth in repetition to the stability of the display rather than to reinforcement from obtained outcomes.
-
-The online study followed the same procedure, delivered in the browser without eye tracking or calibration.
+No outcome was ever realized and no feedback of any kind was delivered. Participants were not told whether a choice was good, no commute was simulated or experienced, and payment did not depend on the options chosen. The values shown on the screen were therefore the only information available about the worth of each alternative on a given trial, which is what makes it possible to attribute any growth in repetition to the stability of the display rather than to reinforcement from obtained outcomes.The online study followed the same procedure, delivered in the browser without eye tracking or calibration. 
 
 After the task, participants completed a short questionnaire recording age, gender, and ocular conditions, and rated how relevant each of the four attributes had been to their decisions. Participants also described their experience of the task. These reports establish that the disruption was consciously detected: participants reported noticing the change and being surprised by it, and identified the row colors as the cue, because the colors moved with the rows when the order was permuted. The manipulation was therefore salient rather than subliminal, which is what the attention-recapture account requires; we return to this point in the Discussion.
 
-\subsection{Eye Tracking and Gaze Measures}
+\subsection{Eye tracking and gaze measures}
 
 The choice screen was divided into 19 non-overlapping regions of interest (ROIs): the 12 cells holding the attribute values (4 attributes $\times$ 3 alternatives), the 4 attribute labels, and the 3 alternative labels (Figure~\ref{fig:interface}). Dwell time was computed for each ROI on each trial by summing the durations of all gaze samples falling within it. These dwell times supplied both the attribute-specific measures and the trial-level gaze entropy defined in Equations~\ref{eq:shannon_entropy} and following.
 
@@ -146,7 +144,7 @@ A small number of trials were recorded with invalid (negative) durations, the re
     \label{fig:interface}
 \end{figure}
 
-\subsection{Operationalizing Habitual Control}
+\subsection{Operationalizing habitual control}
 
 We first estimated an attribute-only choice model that excluded previous-choice inertia. For each participant and trial, this model provided the systematic utility of every alternative from its current attributes. Let $c_{n,t-1}$ denote participant $n$'s previous choice. We classified that alternative as currently best when
 
@@ -163,7 +161,7 @@ V_{n,t,c_{n,t-1}}<\max_j V_{n,t,j}).
 
 For comparison, we also calculated staying when the previous alternative remained best. We compared these conditional probabilities during early training (trials 1--10), late training (trials 91--100), and immediately after the layout disruption (trials 101--110). Because inertia was excluded when current utility was calculated, prior choice could not make an alternative count as best. All inferential models preserved the panel structure of repeated trials within participants.
 
-\subsection{Latent-Attention Choice Model}
+\subsection{Latent-attention choice model}
 
 To test whether attention changes the balance between current attribute information and previous responses, we modeled utility as a function of the attributes and a trial-specific inertia term:
 
@@ -248,7 +246,7 @@ Because latent attention is unobserved, the random terms were integrated by maxi
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{Figures/final_figure_model.png}
-    \caption{Model parameters and value-dependent staying. (\textbf{A}) Each attribute parameter and the inertia parameter expressed relative to its value on the first trial, so that coefficients in different units are directly comparable. Faint lines show individual participants, solid lines the fitted trend, and the dashed line marks the layout disruption at trial 101. All four attribute parameters (CO\textsubscript{2}, comfort, cost, time) decline across training, whereas the inertia parameter rises; both trends flatten after the disruption. (\textbf{B}) Habitual staying: the probability of repeating the previous choice on diagnostic trials, where that alternative was no longer the best available, for early training (trials 1--10), late training (trials 91--100), and immediately after the disruption (trials 101--110). Habitual staying rose across training and fell when the layout was disrupted. Error bars show confidence intervals that preserve the repeated-measures structure. (\textbf{C}) The same quantity across all 150 trials, as fitted by the beta regression, with a 95\% confidence band and the disruption marked. Non-diagnostic trials, on which the previous alternative remained best and habitual and goal-directed control predict the same response, are not plotted.}
+    \caption{Model parameters and value-dependent staying. (\textbf{A}) Each attribute parameter and the inertia parameter expressed relative to its value on the first trial, so that coefficients in different units are directly comparable. Faint lines show individual participants, solid lines the fitted trend, and the dashed line marks the layout disruption at trial 101. All four attribute parameters (CO\textsubscript{2}, comfort, cost, time) decline across training, whereas the inertia parameter rises; both trends flatten after the disruption. (\textbf{B}) Habitual staying: the probability of repeating the previous choice on diagnostic trials, where that alternative was no longer the best available, for early training (trials 1--10), late training (trials 91--100), and immediately after the disruption (trials 101--110). Habitual staying rose across training and fell when the layout was disrupted. Error bars show confidence intervals that preserve the repeated-measures structure. (\textbf{C}) The same quantity across all 150 trials, as fitted by the beta regression, with a 95\% confidence band and the disruption marked. Trials on which the previous alternative remained best are not plotted; on those trials both forms of control favor staying, so a repetition cannot be attributed to either.}
 % TODO figure: panel B to show the diagnostic condition only (drop the "better" bars and the
 % pairwise significance brackets); add panel C, fitted P(stay | delta=1) across trials 1-150
 % with 95% band from the beta regression and a vertical line at 101. Observed means may be
@@ -265,9 +263,9 @@ Because latent attention is unobserved, the random terms were integrated by maxi
 
 The behavioral analysis is presented first because it provides the critical test of habitual control in the present task. Overtraining increased staying when current utility favored switching and reduced staying when it favored remaining. At the same time, gaze narrowed into a stereotyped spatial routine. Disrupting the learned layout restored both attentional breadth and value-sensitive staying, while relative preferences remained stable throughout. As shown below, the opposing conditional changes were not evident in the raw probability of repeating a choice.
 
-\subsection{Overtraining Reduces Control by Current Value}
+\subsection{Overtraining reduces control by current value}
 
-Habitual control was defined as staying with the previously chosen alternative on trials where that alternative was no longer the best available ($\delta_{nt}=1$). Only these trials are diagnostic. When the previous alternative remains best ($\delta_{nt}=0$), habitual and goal-directed control predict the same response, so repetition on those trials cannot distinguish between them. Figure~\ref{fig:value-staying} therefore shows the diagnostic condition alone, across early training, late training, and the trials immediately following the disruption.
+Habitual control was defined as staying with the previously chosen alternative on trials where that alternative was no longer the best available ($\delta_{nt}=1$). This is the choice analogue of the devaluation criterion: the response persists although current value does not support it. On trials where the previous alternative remained best ($\delta_{nt}=0$), staying is the response favored by habitual and goal-directed control alike, so an individual repetition there cannot be attributed to either. Figure~\ref{fig:value-staying} therefore shows the habit criterion alone, across early training, late training, and the trials immediately following the disruption. The complementary trials are retained in the analyses below, where the two conditions change in opposite directions and are informative in their own right.
 
 We tested this formally with a beta regression, appropriate because the probability of staying is bounded between 0 and 1. The model predicted $P^{\mathrm{stay}}_{nt}$ from trial ($t$), the manipulation ($M_{nt}=1$ for $t>100$), the diagnostic indicator ($\delta_{nt}$), and all of their interactions, with a participant-specific random intercept (Table~\ref{tab:beta-stay}).
 
@@ -301,7 +299,7 @@ Trial $\times$ Manipulation $\times$ $\delta$ & $-$0.0006 & 0.0018 & $-$0.33 & .
 
 These opposing movements explain why the habit is not apparent in marginal repetition. Overtraining did not simply make every response more repetitive. It specifically reduced how strongly current value determined whether participants stayed or switched.
 
-\subsection{Attention Narrows During Training}
+\subsection{Attention narrows during training}
 
 Gaze entropy declined steadily across the stable phase ($r=-.292$, $p<.01$): participants scanned the display in an increasingly narrow pattern as training progressed. The manipulation interrupted this. Entropy rose abruptly at trial 101, and across the disrupted phase it no longer declined with trial number in any meaningful way ($r=-.0066$, $p<.01$). Visual search therefore not only broadened at the moment the layout changed, it stopped renarrowing thereafter, consistent with a display that had ceased to be predictable.
 
@@ -325,27 +323,27 @@ Because the size of such a difference depends on how wide a window is taken arou
     \label{fig:sensitivity}
 \end{figure}
 
-\subsection{Spatial Fixation Habits Form and Break}
+\subsection{Spatial fixation habits form and break}
 
 The narrowing of attention took a specific spatial form. The share of fixation time on the most-attended area of interest rose steadily from around 19\% at trial 1 to 25\% by trial 100 (Figure~\ref{fig:results}C). The probability of returning to the same area on consecutive trials rose from 16\% to 27\% over the same period (Figure~\ref{fig:results}D). Participants were not just attending to fewer attributes in general; they were settling into a fixed spatial routine. When the context changed at trial 101, both patterns reversed immediately. The probability of fixating the same area dropped, and fixation time redistributed across the display.
 
 Comparing the 20 trials on either side of the disruption, the dominant area of interest received between 1.73\% and 3.36\% less of the trial's viewing time afterwards ($p=.05$); comparing only the last trial before with the first trial after, the difference reached 6\%. These magnitudes are substantial relative to the display. With 19 areas of interest, perfectly even viewing would allocate 5.26\% to each, so a shift of 3\% to 6\% represents a large fraction of the whole range over which this measure can move. As with entropy, the difference remained negative and significant for every window from 1 to 50 trials on each side (Figure~\ref{fig:sensitivity}B).
 
-\subsection{Raw Repetition Conceals the Transfer of Control}
+\subsection{Raw repetition conceals the transfer of control}
 
 The raw probability of repeating the same choice showed no significant trend during training ($r=-.033$, $p=.744$) or after the manipulation ($r=-.138$, $p=.34$). Figure~\ref{fig:value-staying} shows why. During training, participants repeated less when repetition was value consistent and more when it was value inconsistent. Aggregating across these conditions caused the two changes to cancel.
 
-\subsection{Longer Trials Are More Exploratory}
+\subsection{Longer trials are more exploratory}
 
 Across all trials and participants, longer response times were associated with higher gaze entropy. Trials completed quickly involved a narrower visual search. As participants settled into a spatial routine, they also chose faster. Response time is therefore a behavioral correlate of attentional breadth, and the steep RT decline during training (Figure~\ref{fig:results}B) mirrors the entropy decline.
 
-\subsection{Response Times Replicate Online}
+\subsection{Response times replicate online}
 
 Mean response times showed the same trajectory in both the laboratory and online samples: a steep decline during training and a partial recovery after the context change (Figure~\ref{fig:results}B). Comparing the 20 trials on either side of the disruption, responses immediately afterwards were slower by 1.18 to 2.89~s in the laboratory sample and by 0.69 to 2.46~s in the online sample ($p=.05$). The two samples therefore agree both in shape and in magnitude, even though only the laboratory participants were eye-tracked. This confirms that the effect is not specific to the laboratory setting.
 
 The slowing was concentrated around the disruption itself. Repeating the comparison across windows of 1 to 50 trials, the difference was largest for the narrowest windows and vanished as the window widened (Figure~\ref{fig:sensitivity}C), so response times returned to their previous level once participants had learned the new arrangement. This is the expected signature of a transient return to controlled processing rather than a lasting change in how long decisions took.
 
-\subsection{The Structural Model Reveals What Choices Hide}
+\subsection{The structural model reveals what choices hide}
 
 The structural model estimated what the choice data could not show. Every parameter changed in magnitude across trials. To place them on a common scale, we divided each parameter's estimate at trial $t$ by its estimate on the first trial, which expresses each coefficient as a proportion of its starting value and makes attributes measured in different units directly comparable.
 
@@ -400,11 +398,11 @@ Several limitations should be noted. The eye-tracking sample was modest and the 
 
 In summary, extended choice in a stable DCE narrowed attention and made previous responses more likely to persist when current utility supported switching. This change occurred while relative preferences remained stable and in the absence of outcome feedback. Disrupting the learned environment restored broader attention and value-sensitive choice. The present results suggest that stable repetition may be sufficient for habit control in humans.
 
-\section{Data Availability}
+\section{Data availability}
 
 The choice and eye-tracking data supporting the findings of this study, together with the study materials, are openly available in the Open Science Framework repository at \url{https://osf.io/6xg37/}.
 
-\section{Code Availability}
+\section{Code availability}
 
 The preprocessing scripts and the analysis and model-estimation code used to generate the results reported here are openly available in the same Open Science Framework repository at \url{https://osf.io/6xg37/}.
 
@@ -412,11 +410,11 @@ The preprocessing scripts and the analysis and model-estimation code used to gen
 
 Omar David Perez was supported by ANID-SIA 85220023 and ANID-FONDECYT 1261338. Bastian Henriquez-Jara was supported by ANID-FONDECYT 1230050. Model estimation was performed at the National Laboratory for High Performance Computing (NLHPC).
 
-\section{Author Contributions}
+\section{Author contributions}
 
 O.D.P. and B.H.J. designed the study. S.M. implemented the task and collected the data. S.M. and B.H.J. analyzed the data. O.D.P. and B.H.J. wrote the manuscript. All authors reviewed and approved the final manuscript.
 
-\section{Competing Interests}
+\section{Competing interests}
 
 The authors declare no competing interests.
 
