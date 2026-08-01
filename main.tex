@@ -245,12 +245,8 @@ Because latent attention is unobserved, the random terms were integrated by maxi
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{Figures/final_figure_model.png}
-    \caption{Model parameters and value-dependent staying. (\textbf{A}) Each attribute parameter and the inertia parameter expressed relative to its value on the first trial, so that coefficients in different units are directly comparable. Faint lines show individual participants, solid lines the fitted trend, and the dashed line marks the layout disruption at trial 101. All four attribute parameters (CO\textsubscript{2}, comfort, cost, time) decline across training, whereas the inertia parameter rises; both trends flatten after the disruption. (\textbf{B}) Habitual staying: the probability of repeating the previous choice on diagnostic trials, where that alternative was no longer the best available, for early training (trials 1--10), late training (trials 91--100), and immediately after the disruption (trials 101--110). Habitual staying rose across training and fell when the layout was disrupted. Error bars show confidence intervals that preserve the repeated-measures structure. (\textbf{C}) The same quantity across all 150 trials, as fitted by the beta regression, with a 95\% confidence band and the disruption marked. Trials on which the previous alternative remained best are not plotted; on those trials both forms of control favor staying, so a repetition cannot be attributed to either.}
-% TODO figure: panel B to show the diagnostic condition only (drop the "better" bars and the
-% pairwise significance brackets); add panel C, fitted P(stay | delta=1) across trials 1-150
-% with 95% band from the beta regression and a vertical line at 101. Observed means may be
-% overlaid in bins for display; inference comes from the model, not the bins.
+    \includegraphics[width=\textwidth]{Figures/final_figure_prob_stay.png}
+    \caption{Habitual staying. (\textbf{A}) Fitted probability of repeating the previous choice on diagnostic trials---those where that alternative was no longer the best available---across all 150 trials, from the beta regression, with a 95\% confidence band. The dashed line marks the layout disruption at trial 101. Habitual staying rises across training, falls sharply at the disruption, and then resumes rising at approximately the training slope. (\textbf{B}) The observed frequency of the same quantity in early training (trials 1--10), late training (trials 91--100), and immediately after the disruption (trials 101--110), with error bars showing confidence intervals that preserve the repeated-measures structure. $^{***}p<.001$; $^{****}p<.0001$; ns, not significant.}
     \label{fig:value-staying}
 \end{figure}
 
@@ -347,7 +343,15 @@ The slowing was concentrated around the disruption itself. Repeating the compari
 
 The structural model estimated what the choice data could not show. Every parameter changed in magnitude across trials. To place them on a common scale, we divided each parameter's estimate at trial $t$ by its estimate on the first trial, which expresses each coefficient as a proportion of its starting value and makes attributes measured in different units directly comparable.
 
-Expressed this way, the attribute parameters and the inertia parameter moved in opposite directions during training (Figure~\ref{fig:value-staying}A). All four attribute parameters declined with trial number, and they declined at very nearly the same rate: the correlations were $-.568$ for CO\textsubscript{2} and comfort and $-.567$ for cost and time, all $p<.001$ (Table~\ref{tab:param-corr}). Inertia rose over the same trials at a comparable rate, $r=.542$, $p<.001$.
+Expressed this way, the attribute parameters and the inertia parameter moved in opposite directions during training (Figure~\ref{fig:params}). All four attribute parameters declined with trial number, and they declined at very nearly the same rate: the correlations were $-.568$ for CO\textsubscript{2} and comfort and $-.567$ for cost and time, all $p<.001$ (Table~\ref{tab:param-corr}). Inertia rose over the same trials at a comparable rate, $r=.542$, $p<.001$.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/Param_evolution.png}
+    \caption{Evolution of the model parameters across trials. Each panel shows one parameter expressed relative to its value on the first trial, so that coefficients measured in different units are directly comparable. Faint points are individual participants, the solid line is the fitted trend, and the dashed line marks the layout disruption at trial 101. All four attribute parameters (CO\textsubscript{2}, comfort, cost, time) decline across training, whereas the inertia parameter rises; both trends flatten after the disruption. Because the attribute parameters decline together, the ratios among them---and hence willingness-to-pay---remain stable throughout.}
+    \label{fig:params}
+\end{figure}
+
 
 That the four attribute parameters declined at a common rate is what keeps relative preferences fixed. Willingness-to-pay is the ratio of each attribute parameter to the cost parameter, so a proportional decline in numerator and denominator leaves the ratio unchanged. Willingness-to-pay for travel time, CO\textsubscript{2}, and comfort accordingly remained stable throughout training and did not shift at the disruption. This combination---falling attribute parameters, rising inertia, and flat willingness-to-pay---is the signature of habitual control identified by this design: participants did not come to want different things, but current attribute information became progressively less able to determine what they chose, while the previous response became more able to.
 
@@ -410,7 +414,7 @@ The preprocessing scripts and the analysis and model-estimation code used to gen
 
 \section{Acknowledgements}
 
-Omar David Perez was supported by ANID-SIA 85220023 and ANID-FONDECYT 1261338. Bastian Henriquez-Jara was supported by ANID-FONDECYT 1230050. Model estimation was performed at the National Laboratory for High Performance Computing (NLHPC).
+Omar David Perez was supported by ANID-SIA 85220023 and ANID-FONDECYT 1261338. Bastian Henriquez-Jara was supported by ANID-FONDECYT 1260098 and the `Programa de Estímulo a la Excelencia Institucional (PEEI)' of the Vicerrectoría de Investigación y Desarrollo (VID), Universidad de Chile, through the grant Fondo Inserción Académica Nº 02 del 06.03.2025. Model estimation was performed at the National Laboratory for High Performance Computing (NLHPC).
 
 \section{Author contributions}
 
