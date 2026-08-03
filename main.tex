@@ -127,11 +127,12 @@ After the task, participants completed a short questionnaire recording age, gend
 
 \subsection{Eye tracking and gaze measures}
 
-The choice screen was divided into 19 non-overlapping regions of interest (ROIs): the 12 cells holding the attribute values (4 attributes $\times$ 3 alternatives), the 4 attribute labels, and the 3 alternative labels (Figure~\ref{fig:interface}). Dwell time was computed for each ROI on each trial by summing the durations of all gaze samples falling within it. These dwell times supplied both the attribute-specific measures and the trial-level gaze entropy defined in Equations~\ref{eq:shannon_entropy} and following.
+The choice screen was divided into 19 non-overlapping regions of interest (ROIs): the 12 cells holding the attribute values (4 attributes $\times$ 3 alternatives), the 4 attribute labels, and the 3 alternative labels (Figure~\ref{fig:interface}). Dwell time was computed for each ROI on each trial by summing the durations of all gaze samples falling within it. These dwell times supplied both the attribute-specific measures and the trial-level gaze entropy defined in Equations~\ref{eq:shannon_entropy} and following. Pupil diameter was recorded but is not analyzed here.
 
-The following were recorded on every trial: participant identifier, trial number, response time, chosen alternative, the attribute values presented for each alternative, the screen coordinates of every label and value, dwell time per ROI, and pupil diameter per frame. Pupil diameter was recorded but is not analyzed here.
+%The following were recorded on every trial: participant identifier, trial number, response time, chosen alternative, the attribute values presented for each alternative, the screen coordinates of every label and value, dwell time per ROI, and pupil diameter per frame. 
 
 A small number of trials were recorded with invalid (negative) durations, the result of a timing error in the presentation script that was corrected during data collection; these trials were removed. All remaining trials were retained for analysis.
+
 % NOTE: the count of valid laboratory trials is deliberately not stated. 42 participants x 150
 % trials = 6,300 before cleaning; in the earlier 39-participant snapshot only 2 of 5,850 were lost
 % to this filter, so the figure is just under 6,300 if it is asked for. Communications Psychology
@@ -145,6 +146,10 @@ A small number of trials were recorded with invalid (negative) durations, the re
 \end{figure}
 
 \subsection{Operationalizing habitual control}
+
+Applying the habit criterion to a discrete-choice task requires knowing, on every trial, which alternative was the best one for that particular participant. In an animal devaluation experiment this is given by the design: the experimenter devalues the outcome and therefore knows that its value has changed. Here nothing is devalued. The attributes simply take new values from trial to trial, and whether the previously chosen alternative is still the best one depends on how that participant weighs cost against travel time, comfort and emissions. Those weights are not observed and have to be recovered from behavior. 
+
+Random utility models are the standard means of doing so \citep{mcfadden1974,train2009}. The utility that participant $n$ derives from alternative $i$ on trial $t$ is written as the sum of a systematic and a random component, $U_{n,t,i}=V_{n,t,i}+\varepsilon_{n,t,i}$. The systematic component $V_{n,t,i}$ is a function of the attributes displayed on that trial and of participant-specific weights on those attributes, which represent the person's preferences. The random component collects everything that influences the decision but is not observed by the analyst. The participant is assumed to choose whichever alternative carries the highest total utility; because part of that utility is unobserved, choices are predicted probabilistically rather than deterministically, and the attribute weights can be estimated from a sequence of observed choices. Once they are estimated, $V_{n,t,i}$ supplies, for each participant and each trial, a ranking of the alternatives in that participant's own terms. It is this ranking, and not any objective property of the attributes, that determines which alternative was currently best, and therefore what counts as repeating a choice against one's current preferences\footnote{A similar approach, where behavior reflects the system in control by task design, was adopted in the widely adopted two-step task in model-free/model-based RL research, where goal-directed and habit-like behavioral strategies are inferred from choices across trials where options' outcomes are constantly varying.}.
 
 We first estimated an attribute-only choice model that excluded previous-choice inertia. For each participant and trial, this model provided the systematic utility of every alternative from its current attributes. Let $c_{n,t-1}$ denote participant $n$'s previous choice. We classified that alternative as currently best when
 
@@ -163,7 +168,7 @@ For comparison, we also calculated staying when the previous alternative remaine
 
 \subsection{Latent-attention choice model}
 
-To test whether attention changes the balance between current attribute information and previous responses, we modeled utility as a function of the attributes and a trial-specific inertia term:
+To test whether attention changes the balance between current attribute information and previous choices, we modeled utility as a function of the attributes and a trial-specific inertia term:
 
 \begin{equation}
 U_{n,t,i} =
